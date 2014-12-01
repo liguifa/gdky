@@ -1,0 +1,254 @@
+﻿<table id="dg_{$id}"></table>
+<div id="win_{$id}">
+    <div id="form_div_{$id}"><label>登陆名：</label><input id="vv_{$id}" /><br /><br /><label>等&nbsp;&nbsp;级：</label><input id="cc_{$id}"><br /><br /><a id="btn_ok_{$id}"></a><a id="btn_canel_{$id}"></a></div>
+</div>
+<style type="text/css">
+    #form_div_{$id}
+    {
+        width: 225px;
+        margin: auto;
+        padding: 30px;
+    }
+
+    #btn_ok_{$id}
+    {
+        margin-left: 40px;
+    }
+
+    #btn_canel_{$id}
+    {
+        margin-left: 40px;
+    }
+    .userImage {
+        width:50px; 
+        height:30px;
+        cursor:pointer;
+    }
+</style>
+<script type="text/javascript">
+    function showImg(val, row)
+    {
+        return '<img class="userImage" src=' + val + ' onClick="show(this)" ">';
+    }
+    function countNum(val)
+    {
+        val = val.split(",");
+        return val.length;
+    }
+    function showStatus(val)
+    {
+        switch (val)
+        {
+            case "0": return "正常";
+            case "1": return "锁定";
+            default: return "异常";
+        }
+    }
+    $('#dg_{$id}').datagrid({
+        url: '{:U("/Admin/Index/GetUser")}',
+        fit: true,
+        pagination: true,
+        fitColumns: true,
+        striped: true,
+        rownumbers: true,
+        singleSelect: true,
+        loadMsg: "玩命加载中...",
+        columns: [[
+            { field: 'user_Id', title: '', hidden: true },
+            { field: 'user_Username', title: '用户名', width:60 },
+            { field: 'user_HeadImage', title: '头像', formatter: showImg, width: 30 },
+            { field: 'admin_Email', title: '邮箱', width: 80 },
+            { field: 'user_Level', title: '等级', width: 30 },
+            { field: 'user_Experience', title: '经验', width: 30 },
+            { field: 'blogTheme_Name', title: '博客主题', width: 60 },
+            { field: 'user_FocusUserIds', title: '关注数', width: 30, formatter: countNum },
+            { field: 'user_SaveBlogIds', title: '博客数', width: 30, formatter: countNum },
+            { field: 'user_SaveBlogIds', title: '收藏数', width: 30, formatter: countNum },
+            { field: 'user_RegTime', title: '注册时间', width: 50 },
+            { field: 'user_Status', title: '状态', width: 30, formatter: showStatus }
+        ]],
+        toolbar: [{
+            iconCls: 'icon-add-admin',
+            text: "添加管理员",
+            handler: function ()
+            {
+                InitAdminWindow("添加管理员", "add");
+            }
+        }, '-', {
+            iconCls: 'icon-edit-admin',
+            text: "修改管理员",
+            handler: function ()
+            {
+                InitAdminWindow("修改管理员");
+            }
+        }, '-', {
+            iconCls: 'icon-remove-admin',
+            text: "删除管理员",
+            handler: function ()
+            {
+                var row = $("#dg_{$id}").datagrid("getSelected");
+                if (row != null)
+                {
+                    $.messager.confirm('确认对话框', '您确定要删除吗？', function (r)
+                    {
+                        if (r)
+                        {
+                            $.messager.progress({
+                                title: "请稍后...",
+                                msg: "正在向服务器提交数据..."
+                            });
+                            $.ajax({
+                                type: 'post',
+                                url: "{:U('/Admin/Index/RemoveAdmin')}",
+                                data: {
+                                    adminId: row.admin_Id
+                                },
+                                success: function (data)
+                                {
+                                    $.messager.progress('close');
+                                    data = JSON.parse(data);
+                                    if (data.status)
+                                    {
+                                        $.messager.alert('提示', data.message, 'ok');
+                                        $("#dg_{$id}").datagrid("reload", null);
+                                    }
+                                    else
+                                    {
+                                        $.messager.alert('提示', data.message, 'error');
+                                    }
+                                }
+                            });
+                        }
+                    });
+                }
+                else
+                {
+                    $.messager.alert('提示', '请先选择要删除的数据！', 'info');
+                }
+            }
+        }, '-', {
+            iconCls: 'icon-sereach-admin',
+            text: "搜索管理员",
+            handler: function ()
+            {
+
+                $.messager.prompt('搜索', '请输入要搜索的管理员用户名？', function (r)
+                {
+                    if (r)
+                    {
+                        // 退出操作;
+                    }
+                });
+            }
+        }]
+    });
+
+    $.extend($.fn.validatebox.defaults.rules, {
+        Username: {
+            validator: function (value)
+            {
+                var patt = new RegExp("[0-9a-zA-Z]{6,15}");
+                return patt.exec(value) == value;
+            },
+            message: '登陆名必须是数字、字母组成，长度在6-15之间！'
+        }
+    });
+    //初始化添加、编辑管理员对话框
+    function InitAdminWindow(title, type)
+    {
+        $('#win_{$id}').window({
+            width: 300,
+            height: 200,
+            modal: true,
+            title: title,
+            collapsible: false,
+            minimizable: false,
+            maximizable: false,
+            resizable: false,
+        });
+        $('#vv_{$id}').validatebox({
+            required: true,
+            validType: 'Username'
+        });
+        $('#cc_{$id}').combobox({
+            valueField: 'id',
+            textField: 'value',
+            editable: false,
+            value: '普通管理员',
+            data: [{
+                id: '0',
+                value: '普通管理员'
+            }, {
+                id: '1',
+                value: '超级管理员'
+            }]
+        });
+        $('#btn_ok_{$id}').linkbutton({
+            iconCls: 'icon-ok',
+            text: "确定",
+            onClick: function ()
+            {
+                var patt = new RegExp("[0-9a-zA-Z]{6,15}");
+                if (patt.exec($("#vv_{$id}").val()) == $("#vv_{$id}").val())
+                {
+                    if (type == "add")
+                    {
+                        $.messager.progress({
+                            title: "请稍后...",
+                            msg: "正在向服务器提交数据..."
+                        });
+                        $.ajax({
+                            type: "post",
+                            url: "{:U('/Admin/Index/AddAdmin')}",
+                            data: {
+                                uname: $("#vv_{$id}").val(),
+                                level: $("#cc_{$id}").combobox("getValue")
+                            },
+                            success: function (data)
+                            {
+                                $.messager.progress('close');
+                                data = JSON.parse(data);
+                                if (data.status)
+                                {
+                                    $.messager.alert('消息', data.message, 'ok');
+                                    $("#win_{$id}").panel("close");
+                                }
+                                else
+                                {
+                                    $.messager.alert('消息', data.message, 'error');
+                                }
+                            }
+                        })
+                    }
+                    else
+                    {
+                        //TODO
+                    }
+                }
+                else
+                {
+                    $.messager.alert('消息', '数据非法！', 'error');
+                }
+            }
+        });
+        $('#btn_canel_{$id}').linkbutton({
+            iconCls: 'icon-cancel',
+            text: "取消",
+            onClick: function ()
+            {
+                $("#win_{$id}").panel("close");
+            }
+        });
+    }
+    function show(obj)
+    {
+        var test = new TTPopups({
+            title: '用户头像',//title
+            content: obj,	//请传入ID，或DOM对象
+            width: 600,
+            height: 350,			//弹出层大小
+            //closeCallBack: testFn,	//关闭执行的回调函数
+            isAutoShow: true	//自动显示
+        });
+    }
+</script>

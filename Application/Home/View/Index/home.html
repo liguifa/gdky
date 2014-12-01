@@ -1,0 +1,119 @@
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>首页</title>
+	<link href="__PUBLIC__/Css/global.css" rel='stylesheet' type="text/css" />
+	<link href="__PUBLIC__/Css/index.css" rel='stylesheet' type="text/css" />
+	<link href="__PUBLIC__/Css/nivo-slider.css" rel='stylesheet' type="text/css" />
+	<script type="text/javascript" src="__PUBLIC__/Js/jquery.min.js"></script>
+	<script src="__PUBLIC__/Js/global.js" type="text/javascript"></script>
+	<script src="__PUBLIC__/Js/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+	<script src="http://qzonestyle.gtimg.cn/qzone/app/qzlike/qzopensl.js#jsdate=20111201" charset="utf-8"></script>
+	<script type="text/javascript">
+	$(document).ready(function()
+	{
+		setNavigation(navigationMenu.home);
+		$('#slider').nivoSlider();
+	})
+	</script>
+</head>
+<body>
+	<div id="page">
+		<script type="text/javascript">
+			getData("header");
+		</script>
+		<div id="content">
+			<div id="content_top">
+				<div id="slider">
+					<img src="__PUBLIC__/Images/img1.png" />
+					<img src="__PUBLIC__/Images/img2.png" />
+					<img src="__PUBLIC__/Images/img3.png" />
+				</div>
+			</div>
+			<div id="content_content">
+				<div id="content_content_left">
+					<ul >
+					<volist id="new" name="news" > 
+						<li>
+							<div>
+								<h4><a href="{:U('Home/Index/newContent/html/'.$new['new_Body'])}">{$new.new_Title}</a></h4>
+								<div>
+									<a href="{$new.new_Body}"><img src="{$new.new_Image}" /></a>
+									<p>{$new.new_Brief}</p>
+									<div>
+										<ul>
+											<li class="content_content_left_li_time">{$new.new_PublicTime}</li>
+											<li class="content_content_left_li_share">
+                                            <script type="text/javascript">
+												Share("{:U('Home/Index/newContent/html/'.$new['new_Body'])}","{new.new_Brief}","{$new.new_Title}","{$new.new_Image}");
+											</script>
+                                            </li>
+											<li class="content_content_left_li_scanNum">{$new.new_ScanNumber}</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</li>
+						</volist>
+					</ul>
+				</div>
+				<div id="content_content_right">
+					<ul>
+						<li>
+							<div>
+							<h4>开源技术</h4>
+							<volist id="tech" name="technologys">
+								<p><a href="{$tech.technology_Url}">{$tech.technology_Title}</a></p>
+							</volist>
+							</div>
+						</li>
+						<li>
+							<div>
+							<h4>开源项目</h4>
+							<volist id="project" name="projects">
+								<p><a href="{$project.technology_Url}">{$project.technology_Title}</a></p>
+							</volist>
+							</div>
+						</li>
+						<li>
+							<div>
+							<h4>代码分享</h4>
+							<volist id="share" name="shares">
+								<p><a href="{$share.technology_Url}">{$share.technology_Title}</a></p>
+							</volist>
+							</div>
+						</li>
+						<li>
+							<div>
+							<h4>热门帖子</h4>
+							<volist id="post" name="posts">
+								<p><a href="">{$post.post_Title}</a></p>
+							</volist>
+							</div>
+						</li>
+						<li>
+							<div>
+							<h4>最新问题</h4>
+							<volist id="tech" name="shares">
+								<p><a href="{$tech.technology_Url}">{$tech.technology_Title}</a></p>
+							</volist>
+							</div>
+						</li>
+						<li>
+							<div>
+							<h4>学习资源</h4>
+							<volist id="study" name="studys">
+								<p><a href="{$study.study_Url}">{$study.study_Title}</a></p>
+							</volist>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			getData("footer");
+		</script>
+	</div>
+</body>
+</html>

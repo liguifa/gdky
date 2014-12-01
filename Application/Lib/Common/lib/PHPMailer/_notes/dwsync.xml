@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name=".gitignore" server="210.30.62.23" local="130603387430000000" remote="130610440200000000" Dst="0" />
+<file name=".scrutinizer.yml" server="210.30.62.23" local="130603387430000000" remote="130610440200000000" Dst="0" />
+<file name=".travis.yml" server="210.30.62.23" local="130603387430000000" remote="130610440200000000" Dst="0" />
+<file name="changelog.md" server="210.30.62.23" local="130603387430000000" remote="130610440200000000" Dst="0" />
+<file name="class.phpmailer.php" server="210.30.62.23" local="130608583656330957" remote="130610440200000000" Dst="0" />
+<file name="class.pop3.php" server="210.30.62.23" local="130603387430000000" remote="130610440200000000" Dst="0" />
+<file name="class.smtp.php" server="210.30.62.23" local="130603387430000000" remote="130610440200000000" Dst="0" />
+<file name="composer.json" server="210.30.62.23" local="130603387430000000" remote="130610440200000000" Dst="0" />
+<file name="LICENSE" server="210.30.62.23" local="130603387430000000" remote="130610440200000000" Dst="0" />
+<file name="mail.php" server="210.30.62.23" local="130608597751196181" remote="130610440200000000" Dst="0" />
+<file name="PHPMailerAutoload.php" server="210.30.62.23" local="130603387430000000" remote="130610440200000000" Dst="0" />
+<file name="README.md" server="210.30.62.23" local="130603387430000000" remote="130610440200000000" Dst="0" />
+<file name="travis.phpunit.xml.dist" server="210.30.62.23" local="130603387430000000" remote="130610440200000000" Dst="0" />
+<file name="VERSION" server="210.30.62.23" local="130603387430000000" remote="130610440200000000" Dst="0" />
+</dwsync>

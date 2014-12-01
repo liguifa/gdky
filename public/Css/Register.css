@@ -1,0 +1,107 @@
+body{
+	overflow: hidden;
+}
+#register{
+	border:1px #dddddd solid;
+	width: 100%;
+	height:450px;
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+#register_top{
+	border-bottom: 3px solid #DDDDDD;
+}
+#register_top h2{
+	margin:12px;
+}
+.input_text{
+	width: 292px;
+    height: 22px;
+    box-shadow: 0 2px 2px 0px #e9e8e0 inset;
+    border: solid 1px #cdcdcd;
+    line-height: 22px;
+    padding: 5px;
+}
+.input_button{
+    margin-top: 30px;
+    /*background: #62AF00;*/
+    background: gray;
+    color: #fff;
+    border: none;
+    width: 300px;
+    height: 38px;
+    font-family: '宋体';
+    font-weight: bold;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+.input_yzm{
+	width: 140px;
+}
+#yzm_img{
+	float:right;
+	margin-right: 100px;
+	height:35px;
+	width: 100px;
+	cursor: pointer;
+}
+#login_right ul{
+	list-style:none;
+	margin:0px;
+	padding: 0px;
+	margin-top: 10px;
+}
+#register_progress{
+	width: 100%;
+	height: 40px;
+	background:url(../Images/icon_register.png) no-repeat;
+	margin-bottom: 20px;
+}
+#main_left{
+	width: 45%;
+	float: left;
+	margin-left: 4%;
+	height: 242px;
+}
+.yz_input{
+	display: none;
+	float:right;
+	margin-right: 40px;
+	margin-top: 10px;
+}
+#main_right{
+	width: 45%;
+	float: left;
+	text-align: center;
+	margin-top: 10px;
+	height: 242px;
+}
+#user_image{
+	width: 200px;
+	height: 200px;
+	margin:auto;
+	cursor: pointer;
+}
+#user_image img{
+	width: 200px;
+	height: 200px;
+}
+#submit{
+	width: 100%;
+	text-align: center;
+}
+.input_select{
+	height: 34px;
+	width: 304px;
+	margin-left: 0px;
+}
+#yzm{
+	margin-left: 60px;
+	padding-left: 180px;
+	margin-top:-22px;
+}
+.subTX{
+	display: none;
+}

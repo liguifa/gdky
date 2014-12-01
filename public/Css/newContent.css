@@ -1,0 +1,132 @@
+#content_content_left{
+	background: #fff;
+	margin-top:12px;
+	border-radius: 5px;
+}
+#content_content_left h2{
+	text-align: center;
+}
+#content_content_left p{
+	text-indent: 2em;
+	line-height: 30px;
+	text-align: left;
+	word-spacing: 5px;
+	padding: 15px;
+}
+#content_content_left div{
+	
+}
+#content_content_left div div div textarea{
+
+}
+
+#info{
+	list-style: none;
+	margin:0px;
+	padding: 0px;
+	float:right;
+}
+#info li{
+	float: left;
+}
+#commentary{
+	list-style: none;
+	margin:0px;
+	padding: 0px;
+	float: left;
+	width: 100%;
+}
+#commentary li{
+	width: 100%;
+	border-top:2px solid #F2F2F2;
+}
+.commentary_box{
+	width: 100%;
+}
+.commentary_userInfo{
+	width: 15%;
+	border-right:solid 2px #A9CBEE;
+	background: #eff4fb;
+	float: left;
+}
+.commentary_userInfo img{
+	width: 100%;
+	height: 100px;
+}
+.commentary_userInfo ul{
+	list-style: none;
+	margin:0px;
+	padding: 0px;
+	font-size: 14px;
+	overflow: hidden;
+}
+.clear{
+	clear: both;
+}
+.commentary_commentaryInfo{
+	float: right;
+	width: 84%;
+	margin-top:10px; 
+}
+.commentary_commentaryInfo_body{
+	float:left;
+}
+.commentary_commentaryInfo_top_scanNumber{
+	float: right;
+}
+#content_content_left div h4{
+	border-top: 1px solid #e8e8e8;
+	border-bottom: 1px solid #e8e8e8;
+	line-height: 40px;
+	height: 40px;
+	padding-left: 10px;
+	/*background: -webkit-linear-gradient(top, #ffffff, #f7f7f7);*/
+	background: url(../Images/barbg.png) repeat-x;
+}
+#content_content_right_public{
+	height: 40px;
+	border-radius: 20px;
+	text-align: center;
+}
+#content_content_right_public p{
+	width: 100%;
+	text-align: center;
+}
+#content_content_right_public p button{
+	border:none;
+	width: 99%;
+	height: 90%;
+	margin-top:2px;
+	margin-left: -19px;
+	border-radius: 5px;
+	font-weight: bold;
+	font-size: 24px;
+	font-family: "楷体";
+	cursor: pointer;
+}
+#content_content_right_public p button:hover{
+	background: #31B191;
+}
+#content_content_right_forum{
+	
+	list-style: none;
+	margin:0px;
+	padding: 0px;
+
+	margin-top: -22px;
+}
+#content_content_right ul li div ul li{
+	float:left;
+	width: 100%;
+	padding:10px 0px; 
+	border:1px #EAEAEA  dotted;
+}
+#content_content_right ul li div ul li a{
+	text-decoration: none;
+	padding: 12px 54px;
+	border-right: 1px  dotted #EAEAEA;
+	color:#000;
+}
+#content_content_right ul li div div{
+	clear: both;
+}
