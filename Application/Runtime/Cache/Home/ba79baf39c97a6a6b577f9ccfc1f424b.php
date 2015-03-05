@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit();?>{"status":true,"message":"u9a8cu8bc1u7801u6b63u786e","append":null}

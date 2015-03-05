@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="keywords"content="大连工业大学开源社区,大连工业大学,工业大学,工大,开源,开源社区,社区,高校开源社区,工大开源社区" />
+	<meta name="description" content="工大开源社区 www.gdky.top 全国高校最知名的开源社区之一，是校内开源爱好者建立，我们传播开源的理念，推广开源项目，为 计算机技术爱好者 开发者提供了一个发现、使用、并交流开源技术的平台，旨在学习和研究开源软件技术，宣传和推广开源软件的应用和开发，营造良好的计算机技术学习氛围。" />
+	<title>注册</title>
+	<script type="text/javascript" src="__PUBLIC__/Js/jquery.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/Js/global.js" ></script>
+	<link href="__PUBLIC__/Css/global.css" rel='stylesheet' type="text/css" />
+	<link href="__PUBLIC__/Css/register.css" rel='stylesheet' type="text/css" />
+	<style type="text/css">
+		#email{
+			width: 600px;
+			margin: auto;
+			margin-top: 100px;
+		}
+		.check_ok{
+			width: 100px;
+			margin-top:0px;
+		}
+		.check_reser{
+			width: 100px;
+			margin-top:0px;
+			background:#5A94CE;
+		}
+		.yz_input{
+			margin:0px;
+			margin-top:10px;
+		}
+		#register_progress{
+			background-position:0px -40px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#email_yzm").ready(function(){
+				$("#email_yzm").blur(function(){
+					$.ajax({
+						type:"post",
+						url:"/index.php/Home/User/CheckMail_Yzm",
+						data:{
+							email_yzm:$(this).val()
+						},
+						success:function(data)
+						{
+							data=JSON.parse(data);
+							if(data.status)
+							{
+								$(".check_ok").css("background","#FBD10A");
+							}
+							else
+							{
+								$(".yz_input").css("display","block");
+							}
+						}
+					});
+				});
+			});
+			$(".check_ok").ready(function(){
+				$(".check_ok").click(function(){
+					$.ajax({
+						type:"post",
+						url:"/index.php/Home/User/RegisterTwo",
+						data:{
+							email_yzm:$("#email_yzm").val()
+						},
+						success:function(data)
+						{
+							data=JSON.parse(data);
+							if(data.status)
+							{
+								window.location.href="/index.php/Home/User/RegisterSuccess";
+							}
+							else
+							{
+
+							}
+						}
+					});
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+<div id="page">
+		<!-- 引入头部 -->
+		<script type="text/javascript">
+			getData("header");
+		</script>
+
+		<!-- 注册页主干开始 -->
+		<div id="content">
+			<div id="register">
+				<div id="register_top">
+						<h2>注册开源工大</h2>
+				</div>
+				<div id="register_content">
+					<div id="register_progress"></div>
+					<!-- 验证邮箱表单开始 -->
+					<div id="email">
+						<h4>我们已向你的邮箱 1048229044@qq.com 发送了验证码，请登录你的邮箱完成验证.</h4>
+						<label>验证码：</label><input class="input_text" id="email_yzm" type="text" placeholder="请输入验证码"/>
+						<button type="button" class="input_button check_ok">确定</button>
+						<span class="yz_input">
+							<img src="__PUBLIC__/Images/cancel.png" />
+							<label>验证码错误！</label>
+						</span><br /><br />
+						<span>如果你长时间未收到邮件，你可以点击这里重新发送邮件</span>
+						<button type="button" class="input_button check_reser">重新发送</button>
+					</div>
+					<!-- 验证邮箱表单结束 -->
+				</div>
+			</div>
+		</div>
+		<!-- 注册页主干结束 -->
+
+		<!-- 引入尾部 -->
+		<script type="text/javascript">
+			getData("footer");
+		</script>
+	</div>
+</body>
+</body>
+</html>

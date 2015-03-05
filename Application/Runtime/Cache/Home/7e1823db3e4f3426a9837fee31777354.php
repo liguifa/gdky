@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit();?>{"status":true,"message":"<span><a href='/index.php/Home/User/Login'>UserName</a></span>|<span><a href='/index.php/Home/User/Login'>u9000u51fa</a></span>","append":"2"}

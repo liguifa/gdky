@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit();?>{"status":true,"message":"<span id='user'><a href='/index.php/Home/User/Login'>李贵发</a></span>|<span><a href='/index.php/Home/User/Login'>退出</a></span>","append":"2"}

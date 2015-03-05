@@ -1,0 +1,109 @@
+#content{
+	margin-top: 20px;
+}
+label{
+	font-family: 微软雅黑, Verdana, sans-serif, 宋体;
+	font-size: 10.5pt;
+	font-weight: bold;
+	vertical-align:center;
+}
+#title{
+	width: 500px;
+	font-size: 10.5pt;
+	padding: 4px;
+	color: #999;
+	border: 1px solid #888;
+	font-family: 微软雅黑, Verdana, sans-serif, 宋体;
+}
+.forums{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	display:  inline-block;
+}
+.forums li{
+	float:left;
+	padding:4px 10px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	border: 2px solid #AAA;
+	background-color: #fff;
+	font-size: 10.5pt;
+	margin: 0 5px 0 0;
+	color: #666;
+	text-decoration: none;
+	outline: none;
+	font-weight: bold;
+	cursor: pointer;
+}
+.forums li:hover{
+	border: 2px solid #40AA53;
+	color:#40AA53;
+}
+#forums_li_active{
+	background: url('../Images/sel.gif') right bottom no-repeat;
+	border: 2px solid #40AA53;
+	color:#40AA53;
+}
+.type{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	display:  inline-block;
+}
+.type li{
+	float:left;
+	padding:4px 10px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	border: 2px solid #AAA;
+	background-color: #fff;
+	font-size: 10.5pt;
+	margin: 0 5px 0 0;
+	color: #666;
+	text-decoration: none;
+	outline: none;
+	font-weight: bold;
+	cursor: pointer;
+}
+.type li:hover{
+	border: 2px solid #40AA53;
+	color:#40AA53;
+}
+#type_li_active{
+	background: url('../Images/sel.gif') right bottom no-repeat;
+	border: 2px solid #40AA53;
+	color:#40AA53;
+}
+#briefly{
+	width: 500px;
+	font-size: 10.5pt;
+	padding: 4px;
+	color: #999;
+	border: 1px solid #888;
+	font-family: 微软雅黑, Verdana, sans-serif, 宋体;
+}
+#editor_id{
+	width: 100%;
+	height: 500px;
+}
+#yzm{
+	width: 200px;
+	font-size: 10.5pt;
+	padding: 4px;
+	color: #999;
+	border: 1px solid #888;
+	font-family: 微软雅黑, Verdana, sans-serif, 宋体;
+}
+#yzm_img{
+	vertical-align: bottom;
+	margin-left: 20px;
+}
+button{
+	width: 150px;
+	height: 50px;
+	margin-top: 20px;
+	cursor: pointer;
+}

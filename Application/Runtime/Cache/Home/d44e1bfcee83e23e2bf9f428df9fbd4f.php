@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit();?>用户名或密码错误！

@@ -1,0 +1,87 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/lib/EasyUI/themes/bootstrap/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/lib/EasyUI/ext_theme/black/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/lib/EasyUI/themes/icon.css" />
+    <script type="text/javascript" src="__PUBLIC__/lib/EasyUI/jquery.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/lib/EasyUI/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/lib/EasyUI/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Js/admin.js"></script>
+    <script src='__PUBLIC__/lib/TTPUP/TTPopups.js'></script>	
+    <style>
+        .opul li {
+            width: 90%;
+            height: 20px;
+            margin-top: 15px;
+            padding-top: 5px;
+            text-align: center;
+            cursor: pointer;
+            -moz-user-select: none; /*火狐*/
+            -webkit-user-select: none; /*webkit浏览器*/
+            -ms-user-select: none; /*IE10*/
+            -khtml-user-select: none; /*早期浏览器*/
+            user-select: none;
+            background-color: #FDF1A4;
+            color: #25B509;
+        }
+        .opul {
+            margin-left: -30px;
+            list-style: none;
+        }
+
+        .liimage {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="easyui-layout">
+    <div data-options="region:'north',title:'大连工业大学开源社区',split:true,height:120">
+        <img src="__PUBLIC__/Images/logo.png" />
+    </div>
+    <div data-options="region:'south',title:'&copy;2014 大连工业大学开源社区',split:true,height:33,collapsible:false"></div>
+    <div data-options="region:'west',title:'操作中心',split:true,width:200">
+        <div id="aa" class="easyui-accordion" data-options="fit:true">
+            <div title="用户管理" data-options="iconCls:'icon-user-manage'">
+                <ul class="opul">
+                    <li value="11">
+                        <img class="liimage" src="__PUBLIC__/Images/admin_user.png" />后台管理员
+                    </li>
+                    <li value="12">
+                        <img class="liimage" src="__PUBLIC__/Images/user_user.png" />社区用户&nbsp;&nbsp;
+                    </li>
+                </ul>
+            </div>
+            <div title="资讯管理" data-options="iconCls:'icon-news-manage'">
+                <ul class="opul">
+                    <li value="91">
+                        <img class="liimage" src="~/EasyUI/themes/gray/images/exper.png" />后台管理员
+                    </li>
+                    <li value="92">
+                        <img class="liimage" src="~/EasyUI/themes/gray/images/prefor.png" />社区用户&nbsp;&nbsp;
+                    </li>
+                </ul>
+            </div>
+            <div title="系统管理" data-options="iconCls:'icon-system-manage'">
+                <ul class="opul">
+                    <li value="91">
+                        <img class="liimage" src="~/EasyUI/themes/gray/images/exper.png" />后台管理员
+                    </li>
+                    <li value="92">
+                        <img class="liimage" src="~/EasyUI/themes/gray/images/prefor.png" />社区用户&nbsp;&nbsp;
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div data-options="region:'center',title:'操作面板'">
+        <div id="tt" class="easyui-tabs" data-options="fit:true">
+            <div title="系统信息" data-option="fit:true">
+                <table id="pg" class="easyui-propertygrid" data-options="url:'{:U(\'/Admin/Index/SystemInfo\')}',showGroup:true,scrollbarSize:0"></table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

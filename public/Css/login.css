@@ -1,0 +1,87 @@
+body {
+	overflow: hidden;
+}
+#top {
+	width:100%;
+	height:52px;
+	background-color:#000;
+}
+#top a {
+	float: left;
+}
+#top .home {
+	float: right;
+	color:#3A66B0;
+	margin:20px 50px 0 0;
+}
+#top .home:hover {
+	color:#670768;
+}
+#main {
+	width:100%;
+	height:500px;
+	background: url('../Images/login_body.jpg') repeat-x;
+}
+#login {
+	border:1px #dddddd solid;
+	width: 100%;
+	height:350px;
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+#login_left_top{
+	border-bottom: 3px solid #DDDDDD;
+}
+#login_left_top h2{
+	margin:12px;
+}
+.input_text{
+	width: 292px;
+    height: 22px;
+    box-shadow: 0 2px 2px 0px #e9e8e0 inset;
+    border: solid 1px #cdcdcd;
+    line-height: 22px;
+    padding: 5px;
+}
+.input_button{
+    margin-top: 30px;
+    background: #62AF00;
+    color: #fff;
+    border: none;
+    width: 100px;
+    height: 38px;
+    font-family: '宋体';
+    font-weight: bold;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+.input_yzm{
+	width: 140px;
+}
+#login_left{
+	width: 52%;
+	padding: 20px;
+	float:left;
+}
+#login_right{
+	width: 32%;
+	padding: 20px;
+	float: right;
+}
+#login_left_other ul{
+	list-style: none;
+}
+#login_right ul{
+	list-style: none;
+	margin:0px;
+	padding: 0px;
+	margin-top: 10px;
+}
+#remember{
+	margin-left: 90px;
+}
+#login_btn{
+	margin-left: 130px;
+}

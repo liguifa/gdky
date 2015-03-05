@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit();?>{"status":true,"message":"<a href='#''>u7528u6237u540d</a>","append":"2"}

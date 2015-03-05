@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit();?>{"status":false,"message":"u683cu5f0fu9519u8bef!","append":"yzm"}
