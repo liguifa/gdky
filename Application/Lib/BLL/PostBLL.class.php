@@ -29,6 +29,7 @@ class PostBLL
 	****************************/
 	public function Select($pageIndex,$pageSize)
 	{
+<<<<<<< HEAD
 		return self::$postDAL->Select("users","user_Id","post_UserId",$pageIndex-1,$pageSize,"post_IsDel=false and post_OwnPostId=0","post_PublicTime","desc");     //调用数据层操作对象对数据库进行查询
 	}
 
@@ -55,6 +56,9 @@ class PostBLL
 	public function AddPost($userId,$postId,$body)
 	{
 		self::$postDAL->Add("null,$userId,'','$body','".date("Y-m-d")."',5,0,0,$postId,null,0");
+=======
+		return self::$postDAL->Select("users","user_Id","post_UserId",$pageIndex-1,$pageSize,"post_IsDel=false","post_PublicTime","desc");     //调用数据层操作对象对数据库进行查询
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 	}
 
 	/***************************

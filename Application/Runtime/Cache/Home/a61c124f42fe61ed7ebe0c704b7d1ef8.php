@@ -13,7 +13,11 @@
 		</div>
 	</div>
 	<div id="header_content">
+<<<<<<< HEAD
 		<img src="/Public/Images/logo.png" />
+=======
+		<img src="/html/Public/Images/logo.png" />
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 	</div>
 	<div id="header_bottom">
 		<div id="header_bottom_main">
@@ -21,12 +25,21 @@
 				<li><a href="<?php echo U('/Home/Index/home');?>">首页</a></li>
 				<li><a href="<?php echo U('/Home/Index/news/pageIndex/1');?>">开源资讯</a></li>
 				<li><a href="<?php echo U('/Home/Index/technology');?>">开源技术</a></li>
+<<<<<<< HEAD
 				<li><a href="<?php echo U('/Home/Index/projects');?>">开源项目</a></li>
 				<li><a href="<?php echo U('/Home/Index/shares');?>">开源分享</a></li>
 				<li><a href="<?php echo U('/Home/Index/questions');?>">开源问答</a></li>
 				<li><a href="<?php echo U('/Home/Index/teahouse');?>">开源茶馆</a></li>
 				<li><a href="<?php echo U('/Home/Index/blog/page/Index');?>">开源博客</a></li>
 				<li id="header_bottom_main_ul_li_last"><a href="<?php echo U('/Home/Index/study');?>">学习资源</a></li>
+=======
+				<li><a href="<?php echo U('/Home/Index/questions');?>">开源项目</a></li>
+				<li><a href="<?php echo U('/Home/Index/questions');?>">开源分享</a></li>
+				<li><a href="<?php echo U('/Home/Index/questions');?>">开源问答</a></li>
+				<li><a href="<?php echo U('/Home/Index/questions');?>">开源茶馆</a></li>
+				<li><a href="<?php echo U('/Home/Index/blogTheme');?>">开源博客</a></li>
+				<li id="header_bottom_main_ul_li_last"><a href="<?php echo U('/Home/Index/questions');?>">学习资源</a></li>
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 			</ul>
 			<div id="header_bottom_main_search"><input  id="header_bottom_main_search_input" type="search" /><button id="header_bottom_main_search_button">搜索</button></div>
 		</div>

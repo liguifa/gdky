@@ -15,14 +15,22 @@ class IndexController extends Controller
         $this->assign('loginStatus', $user);
         $header = $this->fetch('../../PublicViews/header.inc');
         $footer = $this->fetch('../../PublicViews/footer.inc');
+<<<<<<< HEAD
         $header=str_replace("\n","",$header);
         $this->assign('header',str_replace("\r","",$header));
+=======
+        $this->assign('header',str_replace("\r\n","",$header));
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
         $this->assign('footer',str_replace("\n","",$footer));
         $this->display();
     }
 
 	/***************************
+<<<<<<< HEAD
 	功能：显示首页（社区首页）
+=======
+	功能：显示首页（社区首页页）
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 	参数：无
 	返回：/View/Index/home.html视图
 	****************************/
@@ -63,9 +71,13 @@ class IndexController extends Controller
         $pageIndex=$_GET["pageIndex"];
         $n=new \NewsBLL();
         $news=$n->Select($pageIndex,20);
+<<<<<<< HEAD
         $hotNews=$n->Select_Order("new_ScanNumber");
         $users=new \UserBLL();
         $this->assign("users",$users->GetHotUser('news',"new_UserId",10));	
+=======
+        $hotNews=$n->Select_Order("new_ScanNumber");	
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
         $this->assign('news', $news);
         $this->assign('newsSize',$n->Count("*")[0]["count(*)"]);
         $this->assign('pageIndex',$pageIndex>0?$pageIndex:1);
@@ -81,6 +93,7 @@ class IndexController extends Controller
     public function newContent()
     {
         $htmlID=I("html");
+<<<<<<< HEAD
         $n=new \NewsBLL();
         $hotNews=$n->Select_Order("new_ScanNumber");
         $users=new \UserBLL();
@@ -88,6 +101,9 @@ class IndexController extends Controller
         $this->assign('hotNews',$hotNews);
         $this->assign("id",$htmlID);
         $this->display("../../../Public/updatafile/newsHtml/$htmlID");
+=======
+        $this->display("../../../public/updatafile/newsHtml/$htmlID");
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
     }
 	
 	/***************************
@@ -97,6 +113,7 @@ class IndexController extends Controller
 	****************************/
     public function technology()
     {
+<<<<<<< HEAD
         $type=I("type")==null?0:I("type");
         $tech=new \TechnologyBLL();
         $technologys=$tech->Select(1,20,$type);
@@ -138,6 +155,11 @@ class IndexController extends Controller
         $users=new \UserBLL();
         $this->assign("users",$users->GetHotUser('projects',"project_UserId",10));
         $this->assign('type_id',$type);
+=======
+        $tech=new \TechnologyBLL();
+        $technologys=$tech->Select(1,20,1); 
+        $this->assign('technologys', $technologys);
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
         $this->display();
     }
 	
@@ -148,6 +170,7 @@ class IndexController extends Controller
 	****************************/
     public function questions()
     {
+<<<<<<< HEAD
         $question=new \QuestionBLL();
         $questions=$question->Select(1,30);
         $this->assign("questions",$questions);
@@ -234,5 +257,14 @@ class IndexController extends Controller
         $post=new \PostBLL();
         $post->AddPost($_SESSION["user"],$postId,$reply_body);
         $this->Success();
+=======
+        $this->display();
+    }
+    
+    public function blogTheme()
+    {
+        $this->assign("user","李贵发");
+        $this->display("../../../public/BlogThemeThemelates/2014112718142233/index");
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
     }
 }

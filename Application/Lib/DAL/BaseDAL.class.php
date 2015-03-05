@@ -4,6 +4,10 @@
 作者：李贵发
 功能：数据表 self::$table操作
 **********************************/
+<<<<<<< HEAD
+=======
+import("data.SqlHepler","Application/Lib");
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 class BaseDAL
 {
 	public static $sh;			//数据库操作对象
@@ -84,11 +88,14 @@ class BaseDAL
 		return self::$sh->Select()->Count("*")->From(self::$table)->Exec(); 	//调用数据库操作对象对数据库数据个数计算
 	}
 
+<<<<<<< HEAD
 	public function Count_Reply($where)
 	{
 		return self::$sh->Select()->Count("*")->From(self::$table)->Where($where)->Exec();
 	}
 
+=======
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 	/***************************
 	功能：增加数据
 	参数：$data ： string类型数据,要添加的数据,eg:"2,'_{$id}'"

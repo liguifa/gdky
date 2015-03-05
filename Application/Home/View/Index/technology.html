@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 <html>
 <head>
 	<meta name="keywords"content="大连工业大学开源社区,大连工业大学,工业大学,工大,开源,开源社区,社区,高校开源社区,工大开源社区" />
 	<meta name="description" content="工大开源社区 www.gdky.top 全国高校最知名的开源社区之一，是校内开源爱好者建立，我们传播开源的理念，推广开源项目，为 计算机技术爱好者 开发者提供了一个发现、使用、并交流开源技术的平台，旨在学习和研究开源软件技术，宣传和推广开源软件的应用和开发，营造良好的计算机技术学习氛围。" />
+=======
+<!DOCTYPE html>
+<html>
+<head>
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 	<meta charset="UTF-8" />
 	<title>大连工业大学开源社区--开源技术</title>
 	<link href="__PUBLIC__/Css/global.css" rel='stylesheet' type="text/css" />
@@ -13,6 +19,7 @@
 	<script type="text/javascript">
 		$(document).ready(function()
 		{
+<<<<<<< HEAD
 			checkBrower("{:U('/Home/Index/browserError')}");
 			Pagination(1,10);
 			setNavigation(navigationMenu.technology);
@@ -47,6 +54,11 @@
 			$("#pop").remove();
 			$("#mask").remove();
 		}
+=======
+			Pagination(1,10);
+			setNavigation(navigationMenu.technology);
+		});
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 	</script>
 </head>
 <body>
@@ -60,17 +72,28 @@
 					<div id="content_content_left_div">
 					<ul class="content_content_left_div_ul">
 						<li class="px" id="content_content_left_first"><h2>开源技术</h2></li>
+<<<<<<< HEAD
 						<li data-id="0" class="px type px_active"><a href="?type=0">全部</a></li>
 						<volist name="forums" id="forum">
 							<li data-id="{$forum.forum_Id}" class="px type"><a href="?type={$forum.forum_Id}">{$forum.forum_Name}</a></li>
 						</volist>
 						<li class="px type" id="more">更多</li>
+=======
+						<li class="px px_active">大炸会</li>
+						<li class="px">Linux</li>
+						<li class="px">PHP</li>
+						<li class="px">更多</li>
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 					</ul>
 					<ul class="content_content_left_div_ul">
 					<volist name="technologys" id="tech">
 						<li class="content_content_left_div_ul_li">
 							<div class="content_content_left_body_content">
+<<<<<<< HEAD
 								<h3><a href="{:U('Home/Index/newContent/html/'.$tech['technology_Url'])}" target="_bank">{$tech.technology_Title}</a></h3>
+=======
+								<h3><a href="{$tech.technology_Url}" target="_bank">{$tech.technology_Title}</a></h3>
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 								<p>{$tech.technology_Brief}</p>
 							</div>
 							<ul>
@@ -81,7 +104,11 @@
 							</ul>
 							<div class="clear"></div>
 						</li>
+<<<<<<< HEAD
 					</volist>
+=======
+						</volist>
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 					</ul>
 					<p>
 						<div class="quotes">
@@ -94,29 +121,56 @@
 						<li id="content_content_right_public">
 							<div>
 								<h3>有什么好的开发技术吗？</h3>
+<<<<<<< HEAD
 								<button><a href="{:U('/Home/Index/Publish')}" target="_blank">我要分享</a></button>
+=======
+								<button>我要分享</button>
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 							</div>
 						</li>
 						<li class="content_content_right_forum">
 							<ol>
 								<li class="content_content_right_forum_title"><h2>开源技术板块</h2></li>
+<<<<<<< HEAD
 								<volist name="forums" id="forum">
 									<li class="content_content_right_forum_forum"><a href="?type={$forum.forum_Id}">{$forum.forum_Name}</a></li>
 								</volist>	
+=======
+								<li class="content_content_right_forum_forum"><a href="#">大炸会</a></li>
+								<li class="content_content_right_forum_forum"><a href="#">Linux</a></li>
+								<li class="content_content_right_forum_forum"><a href="#">PHP</a></li>
+								<li class="content_content_right_forum_forum"><a href="#">.Net</a></li>
+								<li class="content_content_right_forum_forum"><a href="#">ThinkPHP</a></li>
+								<li class="content_content_right_forum_forum"><a href="#">大炸会</a></li>
+								<li class="content_content_right_forum_forum"><a href="#">大炸会</a></li>
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 							</ol>
 						</li>
 						<li class="content_content_right_forum">
 							<ol>
 								<li class="content_content_right_forum_title"><h2>板块牛人</h2></li>
+<<<<<<< HEAD
 								<volist name="users" id="user">
 									<li class="content_content_right_forum_forum"><a href="#">{$user.user_Username}</a></li>
 								</volist>
+=======
+								<li class="content_content_right_forum_forum"><a href="#">大炸会</a></li>
+								<li class="content_content_right_forum_forum"><a href="#">Linux</a></li>
+								<li class="content_content_right_forum_forum"><a href="#">PHP</a></li>
+								<li class="content_content_right_forum_forum"><a href="#">.Net</a></li>
+								<li class="content_content_right_forum_forum"><a href="#">ThinkPHP</a></li>
+								<li class="content_content_right_forum_forum"><a href="#">大炸会</a></li>
+								<li class="content_content_right_forum_forum"><a href="#">大炸会</a></li>
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 							</ol>
 						</li>
 					</ul>
 				</div>
 			</div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 		</div>
 		<script type="text/javascript">
 			getData("footer");

@@ -16,13 +16,23 @@ class UserBLL
 			$username=$_Cookie["user_id"];
 			$password=$_Cookie["user_pwd"];
 		}
+<<<<<<< HEAD
 		$result=self::$userDAL->Select(0,1,"user_Email='$username'");
+=======
+		$result=self::$userDAL->Select(0,1,"user_Username='$username'");
+		echo 123;
+		var_dump($result);
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 		if(sizeof($result))
 		{
 			if($result[0]["user_Password"]==$password)
 			{
 				$status->status=true;
+<<<<<<< HEAD
 				$status->message="<span id='user'><a href='/index.php/Home/User/Login'>".$result[0]["user_Username"]."</a></span>|<span><a href='/index.php/Home/User/Login'>退出</a></span>";
+=======
+				$status->message="<a href=\"#\">用户名</a>";
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 				$status->append=$result[0]["user_Id"];
 				$_SESSION['user']=$result[0]["user_Id"];
 			}
@@ -46,11 +56,19 @@ class UserBLL
 	{
 		if($_SESSION['user'])
 		{
+<<<<<<< HEAD
 			return "<span><a href='/index.php/Home/User/Login'>".$result[0]["user_Username"]."</a></span>|<span><a href='/index.php/Home/User/Login'>退出</a></span>";
 		}
 		else
 		{
 			return "<span><a href=\"/index.php/Home/User/Login\">登陆</a></span><span>|</span><span><a href=\"/index.php/Home/User/Register\">注册</a></span>";
+=======
+			return "<a href=\"#\">用户名</a>";
+		}
+		else
+		{
+			return "<span><a href=\"/html/index.php/Home/User/Login\">登陆</a></span><span>|</span><span><a href=\"/html/index.php/Home/User/Register\">注册</a></span>";
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 		}
 		
 	}
@@ -116,21 +134,27 @@ class UserBLL
 		}
 		return $status->ToJson();
 	}
+<<<<<<< HEAD
 
 	public function GetHotUser($table,$col,$pageSize)
 	{
 		return self::$userDAL->Select("$table","user_Id",$col,0,$pageSize,"user_IsDel=false","count(user_Id)","desc");
 	}
+=======
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
     
     public function GetUserList($pageIndex,$pageSize)
     {
         $res=self::$userDAL->Select("BlogThemes","user_BlogThemeId","blogTheme_Id",$pageIndex-1,$pageSize,"user_IsDel=false","user_Id","desc");
         return json_encode($res);
     }
+<<<<<<< HEAD
 
     public function GetUserMsg($userId)
     {
     	return self::$userDAL->Select("levels","level_Id","user_Level",0,1,"user_IsDel=false and user_Id=$userId","user_Id","asc");
     }
+=======
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 }
 ?>

@@ -27,7 +27,11 @@ class StatusAttribute
 	public function ToJson()
 	{
 		$json = array('status' => $this->status,'message'=>$this->message,'append'=>$this->append );
+<<<<<<< HEAD
 		return json_encode($json,JSON_UNESCAPED_UNICODE);
+=======
+		return json_encode($json);
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 	}
 }
 ?>

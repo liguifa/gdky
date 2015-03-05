@@ -138,6 +138,7 @@ class UserController extends Controller
 
 	public function RegisterSuccess()
 	{
+<<<<<<< HEAD
 		$data = array();
 		$data['short_name'] = 'liguifa';
 		$data['secret'] = '5840bb57a711a1857d594fe659bbe994';
@@ -167,6 +168,8 @@ curl_close($ch);
 
 	public function Person()
 	{
+=======
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 		$this->display();
 	}
 }

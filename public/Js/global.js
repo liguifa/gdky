@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var navigationMenu={home:0,news:1,technology:2,projects:3,shares:4,questions:5,teahouse:6,study:8};
 
 function checkBrower(href)
@@ -11,10 +12,17 @@ function checkBrower(href)
 		window.location.href=href;
 	}
 }
+=======
+var navigationMenu={home:0,news:1,technology:2,questions:3};
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 
 function setCookie(c_name,c_value,c_time)
 {
     var date=new Date();
+<<<<<<< HEAD
+=======
+
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
     date.setHours(date.getHours() + c_time);
     document.cookie=c_name+"="+c_value+";expires="+date.toGMTString();
 }
@@ -46,8 +54,14 @@ function setNavigation(navIndex)
 function setLogin(html)
 {
     $("#header_top_main_user").html(html);
+<<<<<<< HEAD
     var oldHeaderHtml=localStorage.getItem("header");
     localStorage.setItem("header",oldHeaderHtml.replace(/<span><a href=\"\/index.php\/Home\/User\/Login\">登陆<\/a><\/span><span>|<\/span><span><a href=\"\/index.php\/Home\/User\/Register\">注册<\/a><\/span>/,html));
+=======
+    alert(html);
+    var oldHeaderHtml=sessionStorage.getItem("header");
+    sessionStorage.setItem("header",oldHeaderHtml.replace(/<span>.*<\/span>/,html));
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 }
 
 function setData(d_header,d_footer)

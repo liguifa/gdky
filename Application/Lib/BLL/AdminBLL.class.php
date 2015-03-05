@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+﻿<?php
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 class AdminBLL
 {
 	private static $adminDAL;

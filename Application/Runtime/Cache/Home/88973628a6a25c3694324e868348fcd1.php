@@ -1,6 +1,7 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
 	<meta name="keywords"content="大连工业大学开源社区,大连工业大学,工业大学,工大,开源,开源社区,社区,高校开源社区,工大开源社区" />
 	<meta name="description" content="工大开源社区 www.gdky.top 全国高校最知名的开源社区之一，是校内开源爱好者建立，我们传播开源的理念，推广开源项目，为 计算机技术爱好者 开发者提供了一个发现、使用、并交流开源技术的平台，旨在学习和研究开源软件技术，宣传和推广开源软件的应用和开发，营造良好的计算机技术学习氛围。" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -9,13 +10,24 @@
 	<script type="text/javascript" src="/Public/Js/global.js"></script>
 	<link href="/Public/Css/global.css" rel='stylesheet' type="text/css" />
 	<link href="/Public/Css/login.css" rel='stylesheet' type="text/css" />
+=======
+	<title>登陆</title>
+	<script type="text/javascript" src="/html/Public/Js/jquery.min.js"></script>
+	<script type="text/javascript" src="/html/Public/Js/global.js"></script>
+	<link href="/html/Public/Css/global.css" rel='stylesheet' type="text/css" />
+	<link href="/html/Public/Css/login.css" rel='stylesheet' type="text/css" />
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 	<script type="text/javascript">
 		$("#login_btn").ready(function(){
 			$("#login_btn").click(function(){
 				$.ajax({
 					type:'post',
+<<<<<<< HEAD
 					url:"<?php echo U('/Home/User/LoginIn');?>",
 					contentType: "application/x-www-form-urlencoded; charset=utf-8", 
+=======
+					url:'/html/index.php/Home/User/LoginIn',
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 					data:{
 						user:$("#username").val(),
 						pwd:$("#password").val(),
@@ -28,6 +40,7 @@
 						if(data.status)
 						{
 							setLogin(data.message);
+<<<<<<< HEAD
 							// $.ajax({
 							// 	type:"get",
 							// 	url:"http://api.duoshuo.com/sites/join.jsonp",
@@ -43,6 +56,8 @@
 							// 		alert(1);
 							// 	}
 							// });
+=======
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 							history.back();
 						}
 						else
@@ -64,9 +79,15 @@
 		</script>
 		<div id="content">
 			<div id="login">
+<<<<<<< HEAD
 				<div id="login_left_top">
 					<h2>登陆开源工大</h2>
 				</div>
+=======
+			<div id="login_left_top">
+						<h2>登陆开源工大</h2>
+					</div>
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 				<div id="login_left">
 					<div id="login_left_button">
 						<label>登陆邮箱：</label>
@@ -79,7 +100,11 @@
 					<div id="login_left_other">
 						<h4>还可以使用其他帐号登录 （请点击相应图标进入登录页面）：</h4>
 						<ul>
+<<<<<<< HEAD
 							<li><a href="http://www.baidu.com"><img src="/Public/Images/qq_login.gif" /></a></li>
+=======
+							<li><a href="http://www.baidu.com"><img src="/html/Public/Images/qq_login.gif" /></a></li>
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 						</ul>
 					</div>
 				</div>

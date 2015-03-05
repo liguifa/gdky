@@ -6,16 +6,21 @@ import("BLL.AdminBLL","Application/Lib");
 import("BLL.TechnologyBLL","Application/Lib");
 import("BLL.PostBLL","Application/Lib");
 import("BLL.StudyBLL","Application/Lib");
+<<<<<<< HEAD
 import("BLL.ProjectBLL","Application/Lib");
 import("BLL.ForumsBLL","Application/Lib");
 import("BLL.ShareBLL","Application/Lib");
 import("BLL.QuestionBLL","Application/Lib");
 import("BLL.TeahouseBLL","Application/Lib");
+=======
+
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 import("DAL.BaseDAL","Application/Lib");
 import("DAL.AdminDAL","Application/Lib");
 import("DAL.UserDAL","Application/Lib");
 import("DAL.NewsDAL","Application/Lib");
 import("DAL.TechnologyDAL","Application/Lib");
+<<<<<<< HEAD
 import("DAL.ShareDAL","Application/Lib");
 import("DAL.PostDAL","Application/Lib");
 import("DAL.StudyDAL","Application/Lib");
@@ -23,6 +28,11 @@ import("DAL.ProjectDAL","Application/Lib");
 import("DAL.ForumsDAL","Application/Lib");
 import("DAL.QuestionDAL","Application/Lib");
 import("DAL.TeahouseDAL","Application/Lib");
+=======
+import("DAL.PostDAL","Application/Lib");
+import("DAL.StudyDAL","Application/Lib");
+
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 import("Common.StatusAttribute","Application/Lib");
 import("Common.VerCode","Application/Lib");
 import("Common.UpdataFile","Application/Lib");
@@ -31,16 +41,27 @@ import("Common.email","Application/Lib");
 import("Common.SystemInfo","Application/Lib");
 import("Common.StatusAttribute","Application/Lib");
 import("Common.CheckData","Application/Lib");
+<<<<<<< HEAD
 import("data.SqlHepler","Application/Lib");
 if(!isset($_COOKIE['userdata'])&&$_SERVER['PHP_SELF']!="/index.php")
 {
     header("Location: /");
+=======
+
+if(!isset($_COOKIE['userdata'])&&$_SERVER['PHP_SELF']!="/html/index.php")
+{
+    header("Location: /html");
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 }
 /*echo $_SESSION["admin"];die;*/
 /*if(!$_SESSION["admin"]&&(!($_SERVER['PHP_SELF']=='/html/index.php/Admin/Index/login'||$_SERVER['PHP_SELF']=='/html/index.php/Admin/Index/VerCode.html'||$_SERVER['PHP_SELF']=='/html/index.php/Admin/Index/loginIn.html')))
 {
 	header("Location: /html/index.php/Admin/Index/login");
 }*/
+<<<<<<< HEAD
+=======
+
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 function GetLoadStatus()
 {
 	$userBLL=new \UserBLL();

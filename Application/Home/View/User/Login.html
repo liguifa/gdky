@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
 	<meta name="keywords"content="大连工业大学开源社区,大连工业大学,工业大学,工大,开源,开源社区,社区,高校开源社区,工大开源社区" />
 	<meta name="description" content="工大开源社区 www.gdky.top 全国高校最知名的开源社区之一，是校内开源爱好者建立，我们传播开源的理念，推广开源项目，为 计算机技术爱好者 开发者提供了一个发现、使用、并交流开源技术的平台，旨在学习和研究开源软件技术，宣传和推广开源软件的应用和开发，营造良好的计算机技术学习氛围。" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+=======
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 	<title>登陆</title>
 	<script type="text/javascript" src="__PUBLIC__/Js/jquery.min.js"></script>
 	<script type="text/javascript" src="__PUBLIC__/Js/global.js"></script>
@@ -14,8 +17,12 @@
 			$("#login_btn").click(function(){
 				$.ajax({
 					type:'post',
+<<<<<<< HEAD
 					url:"{:U('/Home/User/LoginIn')}",
 					contentType: "application/x-www-form-urlencoded; charset=utf-8", 
+=======
+					url:'/html/index.php/Home/User/LoginIn',
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 					data:{
 						user:$("#username").val(),
 						pwd:$("#password").val(),
@@ -28,6 +35,7 @@
 						if(data.status)
 						{
 							setLogin(data.message);
+<<<<<<< HEAD
 							// $.ajax({
 							// 	type:"get",
 							// 	url:"http://api.duoshuo.com/sites/join.jsonp",
@@ -43,6 +51,8 @@
 							// 		alert(1);
 							// 	}
 							// });
+=======
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 							history.back();
 						}
 						else
@@ -64,9 +74,15 @@
 		</script>
 		<div id="content">
 			<div id="login">
+<<<<<<< HEAD
 				<div id="login_left_top">
 					<h2>登陆开源工大</h2>
 				</div>
+=======
+			<div id="login_left_top">
+						<h2>登陆开源工大</h2>
+					</div>
+>>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 				<div id="login_left">
 					<div id="login_left_button">
 						<label>登陆邮箱：</label>
