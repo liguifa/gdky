@@ -10,14 +10,11 @@
 	width: 100%;
 	list-style: none;
 }
-<<<<<<< HEAD
 .type:hover{
 	border: solid 1px #AAAAAA;
 	border-bottom: 0px;
 	background: #F9F9F9;
 }
-=======
->>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 .px{
 	float:left;
 	border-bottom: solid 1px #AAAAAA;
@@ -26,13 +23,10 @@
 	width: 70px;
 	text-align: center;
 }
-<<<<<<< HEAD
 .px a{
 	color:#000;
 	text-decoration: none;
 }
-=======
->>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 #content_content_left_first{
 	float: left;
 	margin: 0px;
@@ -100,13 +94,10 @@
 	height: 30px;
 	cursor: pointer;
 }
-<<<<<<< HEAD
 #content_content_right_public div button a{
 	text-decoration: none;
 	color:#000;
 }
-=======
->>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 #content_content_right_public div button:hover{
 	background: #40AB54;
 }

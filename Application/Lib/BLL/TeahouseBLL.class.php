@@ -29,7 +29,7 @@ class TeahouseBLL
 	****************************/
 	public function Select($pageIndex,$pageSize)
 	{
-		return self::$TeahouseDAL->Select("users","user_Id","post_UserId",$pageIndex-1,$pageSize,"post_IsDel=false and post_OwnForumId=5","post_PublicTime","desc");     //调用数据层操作对象对数据库进行查询
+		return self::$TeahouseDAL->Select("users","user_Id","post_UserId",$pageIndex-1,$pageSize,"post_IsDel=false and post_OwnForumId=5 and post_OwnPostId=0","post_PublicTime","desc");     //调用数据层操作对象对数据库进行查询
 	}
 
 	/***************************
@@ -39,7 +39,7 @@ class TeahouseBLL
 	****************************/
 	public function Count()
 	{
-		return self::$TeahouseDAL->Count();      //调用数据层操作对象对数据库数据个数计算
+		return self::$TeahouseDAL->Count_Reply("post_IsDel=false and post_OwnForumId=5 and post_OwnPostId=0");      //调用数据层操作对象对数据库数据个数计算
 	}
 }
 ?>

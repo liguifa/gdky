@@ -32,6 +32,11 @@ class ForumsBLL
 		return self::$ForumsDAL->Select(0,1000000000,"Forum_IsDel=false");     //调用数据层操作对象对数据库进行查询
 	}
 
+	public function Select_Number($size)
+	{
+		return self::$ForumsDAL->Select(0,$size,"Forum_IsDel=false");     //调用数据层操作对象对数据库进行查询
+	}
+
 	/***************************
 	功能：获取数据库数据量
 	参数：无

@@ -138,38 +138,35 @@ class UserController extends Controller
 
 	public function RegisterSuccess()
 	{
-<<<<<<< HEAD
-		$data = array();
-		$data['short_name'] = 'liguifa';
-		$data['secret'] = '5840bb57a711a1857d594fe659bbe994';
-		$data['users'] = array();
-		$data['users'][] = array(
-    		'user_key' => 1,
-    		'name' => 'test',
-    		);
-		$param = http_build_query($data, '', '&');
-		//$param=stream_context_create($data);
-		//post方式
-$phoneNumber ="13912345678";
-$message = "testMessage"; 
-$curlPost = "phone=".urlencode($phoneNumber)."&message=".$message; 
-$ch=curl_init(); 
-curl_setopt($ch,CURLOPT_URL,'http://api.duoshuo.com/users/import.json'); 
-curl_setopt($ch,CURLOPT_HEADER,0); 
-curl_setopt($ch,CURLOPT_RETURNTRANSFER,0); 
-//设置是通过post还是get方法
-curl_setopt($ch,CURLOPT_POST,1); 
-//传递的变量
-curl_setopt($ch,CURLOPT_POSTFIELDS,$param); 
-$data = curl_exec($ch);
-curl_close($ch);
+// 		$data = array();
+// 		$data['short_name'] = 'liguifa';
+// 		$data['secret'] = '5840bb57a711a1857d594fe659bbe994';
+// 		$data['users'] = array();
+// 		$data['users'][] = array(
+//     		'user_key' => 1,
+//     		'name' => 'test',
+//     		);
+// 		$param = http_build_query($data, '', '&');
+// 		//$param=stream_context_create($data);
+// 		//post方式
+// $phoneNumber ="13912345678";
+// $message = "testMessage"; 
+// $curlPost = "phone=".urlencode($phoneNumber)."&message=".$message; 
+// $ch=curl_init(); 
+// curl_setopt($ch,CURLOPT_URL,'http://api.duoshuo.com/users/import.json'); 
+// curl_setopt($ch,CURLOPT_HEADER,0); 
+// curl_setopt($ch,CURLOPT_RETURNTRANSFER,0); 
+// //设置是通过post还是get方法
+// curl_setopt($ch,CURLOPT_POST,1); 
+// //传递的变量
+// curl_setopt($ch,CURLOPT_POSTFIELDS,$param); 
+// $data = curl_exec($ch);
+// curl_close($ch);
 		$this->display();
 	}
 
 	public function Person()
 	{
-=======
->>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 		$this->display();
 	}
 }

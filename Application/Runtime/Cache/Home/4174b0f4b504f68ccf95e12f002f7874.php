@@ -12,7 +12,7 @@
 		$(document).ready(function()
 		{
 			checkBrower("<?php echo U('/Home/Index/browserError');?>");
-			Pagination(1,10);
+			Pagination(<?php echo ($pageIndex); ?>,<?php echo ($size); ?>);
 			setNavigation(navigationMenu.teahouse);
 		});
 	</script>
@@ -45,11 +45,11 @@
 				</div>
 				<table>
 					<thead>
-						<tr><th></th><th>作者</th><th>回复/查看</th><th>最后发表</th></tr>
+						<tr><th></th><th>作者</th><th>回复</th><th>最后发表</th></tr>
 					</thead>
 					<tbody>
 						<?php if(is_array($teahouses)): $i = 0; $__LIST__ = $teahouses;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$teahouse): $mod = ($i % 2 );++$i;?><tr>
-							<td><a href="<?php echo U('/Home/Index/postContent/pId/'.$teahouse['post_Id'].'/page/1');?>" target="_blank"><?php echo ($teahouse["post_Title"]); ?></a></td><td><?php echo ($teahouse["user_Username"]); ?></td><td>1/23</td><td>2014-9-22 00:00</td>
+							<td><a href="<?php echo U('/Home/Index/postContent/pId/'.$teahouse['post_Id'].'/page/1');?>" target="_blank"><?php echo ($teahouse["post_Title"]); ?></a></td><td><?php echo ($teahouse["user_Username"]); ?></td><td>0</td><td><?php echo ($teahouse["post_PublicTime"]); ?></td>
 						</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 					</tbody>
 					<tfoot>

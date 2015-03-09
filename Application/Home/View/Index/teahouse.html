@@ -12,7 +12,7 @@
 		$(document).ready(function()
 		{
 			checkBrower("{:U('/Home/Index/browserError')}");
-			Pagination(1,10);
+			Pagination({$pageIndex},{$size});
 			setNavigation(navigationMenu.teahouse);
 		});
 	</script>
@@ -45,12 +45,12 @@
 				</div>
 				<table>
 					<thead>
-						<tr><th></th><th>作者</th><th>回复/查看</th><th>最后发表</th></tr>
+						<tr><th></th><th>作者</th><th>回复</th><th>最后发表</th></tr>
 					</thead>
 					<tbody>
 						<volist id="teahouse" name="teahouses">
 						<tr>
-							<td><a href="{:U('/Home/Index/postContent/pId/'.$teahouse['post_Id'].'/page/1')}" target="_blank">{$teahouse.post_Title}</a></td><td>{$teahouse.user_Username}</td><td>1/23</td><td>2014-9-22 00:00</td>
+							<td><a href="{:U('/Home/Index/postContent/pId/'.$teahouse['post_Id'].'/page/1')}" target="_blank">{$teahouse.post_Title}</a></td><td>{$teahouse.user_Username}</td><td>0</td><td>{$teahouse.post_PublicTime}</td>
 						</tr>
 						</volist>
 					</tbody>

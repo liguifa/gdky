@@ -10,18 +10,10 @@ class VerCode
 
 	public function GetImage()
 	{
-<<<<<<< HEAD
 	    header('Content-Type:image/png');
 		$im = imagecreatetruecolor(100, 40);
 		$bg = imagecolorallocate($im, 255,255, 255);
 		imagefilledrectangle($im, 0, 0, 100, 40, $bg);
-=======
-		header('Content-Type:image/png');
-		$im = imagecreatetruecolor(100, 40);
-		$bg = imagecolorallocate($im, 255,255, 255);
-		imagefilledrectangle($im, 0, 0, 100, 40, $bg);
-		
->>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 		for($i=0;$i<4;$i++)
 		{
 			imagestring($im,5,rand(30*$i,30+10*$i),rand(2,10),$this->text[$i],imagecolorallocate($im, rand(0,255), rand(0,255), rand(0,255)));
@@ -44,9 +36,4 @@ class VerCode
 		return $this->text;
 	}
 }
-<<<<<<< HEAD
-=======
-$v=new VerCode();
-$v->GetImage();
->>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 ?>

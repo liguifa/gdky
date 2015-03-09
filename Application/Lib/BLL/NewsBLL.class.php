@@ -44,6 +44,11 @@ class NewsBLL
 		return self::$newsDAL->Select("users","user_Id","new_UserId",0,10,"new_IsDel=false and new_IsReview=true",$col,"desc");     //调用数据层操作对象对数据库进行查询
 	}
 
+	public function Add($title,$brief,$image,$userId,$url)
+	{
+		self::$newsDAL->Add("null,'$title','$brief','$url','$image',0,'"+date("Y-m-d")+"',$userId,1,0,1");
+	}
+
 	/***************************
 	功能：获取数据库数据量
 	参数：无

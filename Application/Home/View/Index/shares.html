@@ -7,12 +7,33 @@
 	<link href="__PUBLIC__/Css/shares.css" rel='stylesheet' type="text/css" />
 	<script type="text/javascript" src="__PUBLIC__/Js/jquery.min.js"></script>
 	<script src="__PUBLIC__/Js/global.js" type="text/javascript"></script>
+	<script src="__PUBLIC__/Js/news.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(document).ready(function()
 		{
 			checkBrower("{:U('/Home/Index/browserError')}");
-			//Pagination(1,10);
+			Pagination({$pageIndex},{$pageMax});
 			setNavigation(navigationMenu.shares);
+			// var pageIndex=1;
+			// $("#content_add>button").click(function(){
+			// 	$(this).text("加载中...");
+			// 	$.ajax({
+			// 		type:"post",
+			// 		url:"{:U('/Home/Index/share')}",
+			// 		data:{
+			// 			pagaIndex:pageIndex+1
+			// 		},
+			// 		success:function(data)
+			// 		{
+			// 			data=JSON.parse(data);
+			// 			var html="";
+			// 			for(var i in data)
+			// 			{
+			// 				html+="<li><div class='content_body'><div class='content_body_img'><img src='__PUBLIC__/updatafile/images/13072957_Jxui.png' /></div><div class='content_body_con'><p><a href='{:U('Home/Index/newContent/html/'.$share['technology_Url'])}' target='_blank'>{$share.technology_Title}</a><br />{$share.technology_Brief}</p></div></div></li>";
+			// 			}
+			// 		}
+			// 	});
+			// });
 		});
 	</script>
 </head>
@@ -27,21 +48,26 @@
 				<li>
 					<div class="content_body">
 						<div class="content_body_img">
-							<img src="__PUBLIC__/updatafile/images/13072957_Jxui.png" />
+							<img src="__PUBLIC__/updatafile/images/{$share.technology_Image}" />
 						</div>
 						<div class="content_body_con">
-							<p><a href="{:U('Home/Index/newContent/html/'.$share['technology_Url'])}" target="_blank">{$share.technology_Title}</a><br />{$share.technology_Brief}.</p>
+							<p><a href="{:U('Home/Index/newContent/html/'.$share['technology_Url'])}" target="_blank">{$share.technology_Title}</a><br />{$share.technology_Brief}</p>
 						</div>
 					</div>
 				</li>
 				</volist>
 			</ul>
-			<div id="content_add">
+			<!-- <div id="content_add">
 				<button type="button">加载更多</button>
-			</div>
+			</div> -->
+		
+						<div class="quotes">
+						</div>
+				
 		</div>
 		<script type="text/javascript">
 			getData("footer");
 		</script>
+	</div>
 </body>
 </html>

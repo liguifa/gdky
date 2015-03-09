@@ -13,7 +13,7 @@
 		$(document).ready(function()
 		{
 			checkBrower("<?php echo U('/Home/Index/browserError');?>");
-			setNavigation(navigationMenu.teahouse);
+			//setNavigation(navigationMenu.teahouse);
 
 			if(<?php echo ($pageIndex); ?>>1 && <?php echo ($size); ?> != 1)
 			{

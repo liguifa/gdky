@@ -14,7 +14,7 @@
 		$(document).ready(function()
 		{
 			checkBrower("<?php echo U('/Home/Index/browserError');?>");
-			Pagination(1,10);
+			Pagination(<?php echo ($pageIndex); ?>,<?php echo ($size); ?>);
 			setNavigation(navigationMenu.technology);
 		});
 		var time;
@@ -60,9 +60,9 @@
 					<div id="content_content_left_div">
 					<ul class="content_content_left_div_ul">
 						<li class="px" id="content_content_left_first"><h2>开源技术</h2></li>
-						<li data-id="0" class="px type px_active"><a href="?type=0">全部</a></li>
-						<?php if(is_array($forums)): $i = 0; $__LIST__ = $forums;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$forum): $mod = ($i % 2 );++$i;?><li data-id="<?php echo ($forum["forum_Id"]); ?>" class="px type"><a href="?type=<?php echo ($forum["forum_Id"]); ?>"><?php echo ($forum["forum_Name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
-						<li class="px type" id="more">更多</li>
+						<li data-id="0" class="px type px_active"><a href="../../../type/0/pageIndex/<?php echo ($pageIndex); ?>.html">全部</a></li>
+						<?php if(is_array($hotForum)): $i = 0; $__LIST__ = $hotForum;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$forum): $mod = ($i % 2 );++$i;?><li data-id="<?php echo ($forum["forum_Id"]); ?>" class="px type"><a href="../../../type/<?php echo ($forum["forum_Id"]); ?>/pageIndex/<?php echo ($pageIndex); ?>.html"><?php echo ($forum["forum_Name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+						<!-- <li class="px type" id="more">更多</li> -->
 					</ul>
 					<ul class="content_content_left_div_ul">
 					<?php if(is_array($technologys)): $i = 0; $__LIST__ = $technologys;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$tech): $mod = ($i % 2 );++$i;?><li class="content_content_left_div_ul_li">
@@ -96,19 +96,18 @@
 						<li class="content_content_right_forum">
 							<ol>
 								<li class="content_content_right_forum_title"><h2>开源技术板块</h2></li>
-								<?php if(is_array($forums)): $i = 0; $__LIST__ = $forums;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$forum): $mod = ($i % 2 );++$i;?><li class="content_content_right_forum_forum"><a href="?type=<?php echo ($forum["forum_Id"]); ?>"><?php echo ($forum["forum_Name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>	
+								<?php if(is_array($forums)): $i = 0; $__LIST__ = $forums;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$forum): $mod = ($i % 2 );++$i;?><li class="content_content_right_forum_forum"><a href="../../../type/<?php echo ($forum["forum_Id"]); ?>/pageIndex/1.html"><?php echo ($forum["forum_Name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>	
 							</ol>
 						</li>
 						<li class="content_content_right_forum">
 							<ol>
 								<li class="content_content_right_forum_title"><h2>板块牛人</h2></li>
-								<?php if(is_array($users)): $i = 0; $__LIST__ = $users;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$user): $mod = ($i % 2 );++$i;?><li class="content_content_right_forum_forum"><a href="#"><?php echo ($user["user_Username"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+								<?php if(is_array($users)): $i = 0; $__LIST__ = $users;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$user): $mod = ($i % 2 );++$i;?><li class="content_content_right_forum_forum"><a href="<?php echo U('/Home/User/Person/uId/'.$user['user_Id']);?>" target="_blank"><?php echo ($user["user_Username"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
 							</ol>
 						</li>
 					</ul>
 				</div>
 			</div>
-
 		</div>
 		<script type="text/javascript">
 			getData("footer");

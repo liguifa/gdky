@@ -29,7 +29,7 @@ class QuestionBLL
 	****************************/
 	public function Select($pageIndex,$pageSize)
 	{
-		return self::$QuestionDAL->Select("users","user_Id","post_UserId",$pageIndex-1,$pageSize,"post_IsDel=false and post_OwnForumId=4","post_PublicTime","desc");     //调用数据层操作对象对数据库进行查询
+		return self::$QuestionDAL->Select("users","user_Id","post_UserId",$pageIndex-1,$pageSize,"post_IsDel=false and post_OwnForumId=4 and post_OwnPostId=0","post_PublicTime","desc");     //调用数据层操作对象对数据库进行查询
 	}
 
 	/***************************
@@ -39,7 +39,7 @@ class QuestionBLL
 	****************************/
 	public function Count()
 	{
-		return self::$QuestionDAL->Count();      //调用数据层操作对象对数据库数据个数计算
+		return self::$QuestionDAL->Count_Reply("post_IsDel=false and post_OwnForumId=4 and post_OwnPostId=0");      //调用数据层操作对象对数据库数据个数计算
 	}
 }
 ?>

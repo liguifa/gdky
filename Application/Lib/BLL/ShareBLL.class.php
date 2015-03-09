@@ -39,7 +39,7 @@ class ShareBLL
 	****************************/
 	public function Count()
 	{
-		return self::$ShareDAL->Count();      //调用数据层操作对象对数据库数据个数计算
+		return self::$ShareDAL->Count_Reply("technology_IsDel=false and technology_OwnForumId=3");      //调用数据层操作对象对数据库数据个数计算
 	}
 }
 ?>

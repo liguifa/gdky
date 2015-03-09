@@ -14,7 +14,7 @@
 		$(document).ready(function()
 		{
 			checkBrower("{:U('/Home/Index/browserError')}");
-			Pagination(1,10);
+			Pagination({$pageIndex},{$size});
 			setNavigation(navigationMenu.projects);
 		});
 		var time;
@@ -60,11 +60,11 @@
 					<div id="content_content_left_div">
 					<ul class="content_content_left_div_ul">
 						<li class="px" id="content_content_left_first"><h2>开源技术</h2></li>
-						<li class="px type px_active" data-id="0"><a href="?type=0">全部</a></li>
-						<volist name="forums" id="forum">
-							<li class="px type" data-id="{$forum.forum_Id}"><a href="?type={$forum.forum_Id}">{$forum.forum_Name}</a></li>
+						<li class="px type px_active" data-id="0"><a href="../../../type/0/pageIndex/{$pageIndex}.html">全部</a></li>
+						<volist name="hotForum" id="forum">
+							<li class="px type" data-id="{$forum.forum_Id}"><a href="../../../type/{$forum.forum_Id}/pageIndex/{$pageIndex}.html">{$forum.forum_Name}</a></li>
 						</volist>
-						<li class="px type">更多</li>
+						<!-- <li class="px type">更多</li> -->
 					</ul>
 					<ul class="content_content_left_div_ul">
 						<volist id="project" name="projects">
@@ -108,20 +108,16 @@
 							<ol>
 								<li class="content_content_right_forum_title"><h2>项目分类</h2></li>
 								<volist name="forums" id="forum">
-									<li class="content_content_right_forum_forum"><a href="?type={$forum.forum_Id}">{$forum.forum_Name}</a></li>
+									<li class="content_content_right_forum_forum"><a href="../../../type/{$forum.forum_Id}/pageIndex/1.html">{$forum.forum_Name}</a></li>
 								</volist>
 							</ol>
 						</li>
 						<li class="content_content_right_forum">
 							<ol>
 								<li class="content_content_right_forum_title"><h2>板块牛人</h2></li>
-								<li class="content_content_right_forum_forum"><a href="#">大炸会</a></li>
-								<li class="content_content_right_forum_forum"><a href="#">Linux</a></li>
-								<li class="content_content_right_forum_forum"><a href="#">PHP</a></li>
-								<li class="content_content_right_forum_forum"><a href="#">.Net</a></li>
-								<li class="content_content_right_forum_forum"><a href="#">ThinkPHP</a></li>
-								<li class="content_content_right_forum_forum"><a href="#">大炸会</a></li>
-								<li class="content_content_right_forum_forum"><a href="#">大炸会</a></li>
+								<volist name="users" id="user">
+									<li class="content_content_right_forum_forum"><a href="{:U('/Home/User/Person/uId/'.$user['user_Id'])}" target="_blank">{$user.user_Username}</a></li>
+								</volist>
 							</ol>
 						</li>
 					</ul>

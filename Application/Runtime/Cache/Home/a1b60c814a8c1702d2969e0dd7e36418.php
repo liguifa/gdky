@@ -7,12 +7,33 @@
 	<link href="/Public/Css/shares.css" rel='stylesheet' type="text/css" />
 	<script type="text/javascript" src="/Public/Js/jquery.min.js"></script>
 	<script src="/Public/Js/global.js" type="text/javascript"></script>
+	<script src="/Public/Js/news.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(document).ready(function()
 		{
 			checkBrower("<?php echo U('/Home/Index/browserError');?>");
-			//Pagination(1,10);
+			Pagination(<?php echo ($pageIndex); ?>,<?php echo ($pageMax); ?>);
 			setNavigation(navigationMenu.shares);
+			// var pageIndex=1;
+			// $("#content_add>button").click(function(){
+			// 	$(this).text("加载中...");
+			// 	$.ajax({
+			// 		type:"post",
+			// 		url:"<?php echo U('/Home/Index/share');?>",
+			// 		data:{
+			// 			pagaIndex:pageIndex+1
+			// 		},
+			// 		success:function(data)
+			// 		{
+			// 			data=JSON.parse(data);
+			// 			var html="";
+			// 			for(var i in data)
+			// 			{
+			// 				html+="<li><div class='content_body'><div class='content_body_img'><img src='/Public/updatafile/images/13072957_Jxui.png' /></div><div class='content_body_con'><p><a href='<?php echo U('Home/Index/newContent/html/'.$share['technology_Url']);?>' target='_blank'><?php echo ($share["technology_Title"]); ?></a><br /><?php echo ($share["technology_Brief"]); ?></p></div></div></li>";
+			// 			}
+			// 		}
+			// 	});
+			// });
 		});
 	</script>
 </head>
@@ -26,20 +47,25 @@
 				<?php if(is_array($shares)): $i = 0; $__LIST__ = $shares;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$share): $mod = ($i % 2 );++$i;?><li>
 					<div class="content_body">
 						<div class="content_body_img">
-							<img src="/Public/updatafile/images/13072957_Jxui.png" />
+							<img src="/Public/updatafile/images/<?php echo ($share["technology_Image"]); ?>" />
 						</div>
 						<div class="content_body_con">
-							<p><a href="<?php echo U('Home/Index/newContent/html/'.$share['technology_Url']);?>" target="_blank"><?php echo ($share["technology_Title"]); ?></a><br /><?php echo ($share["technology_Brief"]); ?>.</p>
+							<p><a href="<?php echo U('Home/Index/newContent/html/'.$share['technology_Url']);?>" target="_blank"><?php echo ($share["technology_Title"]); ?></a><br /><?php echo ($share["technology_Brief"]); ?></p>
 						</div>
 					</div>
 				</li><?php endforeach; endif; else: echo "" ;endif; ?>
 			</ul>
-			<div id="content_add">
+			<!-- <div id="content_add">
 				<button type="button">加载更多</button>
-			</div>
+			</div> -->
+		
+						<div class="quotes">
+						</div>
+				
 		</div>
 		<script type="text/javascript">
 			getData("footer");
 		</script>
+	</div>
 </body>
 </html>

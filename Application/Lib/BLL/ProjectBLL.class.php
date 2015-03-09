@@ -37,9 +37,9 @@ class ProjectBLL
 	参数：无
 	返回：数据库查询结果（二维数组）
 	****************************/
-	public function Count()
+	public function Count($type)
 	{
-		return self::$ProjectDAL->Count();      //调用数据层操作对象对数据库数据个数计算
+		return self::$ProjectDAL->Count_Reply("technology_IsDel=false and technology_OwnForumId=2 and (technology_Type=$type or $type=0)");      //调用数据层操作对象对数据库数据个数计算
 	}
 }
 ?>

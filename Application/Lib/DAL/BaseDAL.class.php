@@ -4,10 +4,6 @@
 作者：李贵发
 功能：数据表 self::$table操作
 **********************************/
-<<<<<<< HEAD
-=======
-import("data.SqlHepler","Application/Lib");
->>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 class BaseDAL
 {
 	public static $sh;			//数据库操作对象
@@ -30,9 +26,9 @@ class BaseDAL
 		  $startNumber ： int类型数据，指定从数据库中读取数据数
 	返回：数据库查询结果集（二维数组）
 	****************************/
-	private function Select_Top($startNumber,$endNumber)
+	private function Select_Top($pageNumber,$sizeNumber)
 	{
-		return self::$sh->Select("*")->From(self::$table)->Limit($startNumber,$endNumber)->Exec();     //调用数据库操作对象对数据库进行查询
+		return self::$sh->Select("*")->From(self::$table)->Limit($pageNumber*$sizeNumber,$sizeNumber)->Exec();     //调用数据库操作对象对数据库进行查询
 	}
 
 	/***************************
@@ -42,9 +38,9 @@ class BaseDAL
 		  $where : string类型数据，查询条件
 	返回：数据库查询结果集（二维数组）
 	****************************/
-	private function Select_Where($startNumber,$endNumber,$where)
+	private function Select_Where($pageNumber,$sizeNumber,$where)
 	{
-		return self::$sh->Select("*")->From(self::$table)->Where($where)->Limit($startNumber,$endNumber)->Exec();    //调用数据库操作对象对数据库进行查询
+		return self::$sh->Select("*")->From(self::$table)->Where($where)->Limit($pageNumber*$sizeNumber,$sizeNumber)->Exec();    //调用数据库操作对象对数据库进行查询
 	}
 
 	/***************************
@@ -56,9 +52,9 @@ class BaseDAL
 		  $rank : string类型数据，排序方式
 	返回：数据库查询结果集（二维数组）
 	****************************/
-	private function Select_Order($startNumber,$endNumber,$where,$col,$rank)
+	private function Select_Order($pageNumber,$endNumber,$where,$col,$rank)
 	{
-		return self::$sh->Select("*")->From(self::$table)->Where($where)->Order($col,$rank)->Limit($startNumber,$endNumber)->Exec();     //调用数据库操作对象对数据库进行查询
+		return self::$sh->Select("*")->From(self::$table)->Where($where)->Order($col,$rank)->Limit($pageNumber*$sizeNumber,$sizeNumber)->Exec();     //调用数据库操作对象对数据库进行查询
 	}
     
     /***************************
@@ -73,9 +69,9 @@ class BaseDAL
 		  $rank : string类型数据，排序方式
 	返回：数据库查询结果集（二维数组）
 	****************************/
-	private function Select_Join($tableJoin,$data_1,$data_2,$startNumber,$endNumber,$where,$col,$rank)
+	private function Select_Join($tableJoin,$data_1,$data_2,$pageNumber,$sizeNumber,$where,$col,$rank)
 	{
-		return self::$sh->Select("*")->From(self::$table)->Join($tableJoin)->On($data_1,$data_2)->Where($where)->Order($col,$rank)->Limit($startNumber,$endNumber)->Exec();     //调用数据库操作对象对数据库进行查询
+		return self::$sh->Select("*")->From(self::$table)->Join($tableJoin)->On($data_1,$data_2)->Where($where)->Order($col,$rank)->Limit($pageNumber*$sizeNumber,$sizeNumber)->Exec();     //调用数据库操作对象对数据库进行查询
 	}
 
 	/***************************
@@ -88,14 +84,10 @@ class BaseDAL
 		return self::$sh->Select()->Count("*")->From(self::$table)->Exec(); 	//调用数据库操作对象对数据库数据个数计算
 	}
 
-<<<<<<< HEAD
 	public function Count_Reply($where)
 	{
 		return self::$sh->Select()->Count("*")->From(self::$table)->Where($where)->Exec();
 	}
-
-=======
->>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 	/***************************
 	功能：增加数据
 	参数：$data ： string类型数据,要添加的数据,eg:"2,'_{$id}'"

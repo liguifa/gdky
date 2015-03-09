@@ -12,7 +12,7 @@
 		$(document).ready(function()
 		{
 			checkBrower("<?php echo U('/Home/Index/browserError');?>");
-			Pagination(1,10);
+			Pagination(<?php echo ($pageIndex); ?>,<?php echo ($size); ?>);
 			setNavigation(navigationMenu.questions);
 		});
 	</script>
@@ -36,11 +36,11 @@
 					<ul>
 						<?php if(is_array($questions)): $i = 0; $__LIST__ = $questions;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$question): $mod = ($i % 2 );++$i;?><li>
 							<div class="content_left_content_tx">
-								<img src="<?php echo ($question["user_HeadImage"]); ?>" />
+								<img src="/Public/Images/<?php echo ($question["user_HeadImage"]); ?>" />
 							</div>
 							<div class="content_left_content_body">
 								<h3><a href="<?php echo U('/Home/Index/postContent/pId/'.$question['post_Id'].'/page/1');?>" target="_blank"><?php echo ($question["post_Title"]); ?></a></h3>
-								<p><a href="#"><?php echo ($question["user_Username"]); ?></a> 于 <?php echo ($question["post_PublicTime"]); ?> 发表在 [工具应用] 最后回复 前天 20:17</p>
+								<p><a href="#"><?php echo ($question["user_Username"]); ?></a> 于 <?php echo ($question["post_PublicTime"]); ?> 发表在 [开源问答] </p>
 							</div>
 						</li><?php endforeach; endif; else: echo "" ;endif; ?>
 					</ul>
@@ -60,8 +60,6 @@
 						</li>
 						<li class="content_content_right_forum">
 							技术问答求助区<br />
-							版主：hooi, zhangchao5821, houlai, omcmc, lucky.zhang, 凌云<br />
-							今日：2 | 主题： 64559<br />
 							版规：<br />
 							诸位会员发帖前请先仔细阅读本版版规(版规位于置顶帖中)，违反版规一律按版规删除<br />
 							0.提问前请搜索，老生常谈的问题别人会厌烦回答你。直接要代码的贴子会被无视。<br />

@@ -4,10 +4,6 @@
 作者：李贵发
 功能：数据表news操作
 **********************************/
-<<<<<<< HEAD
-=======
-import("DAL.BaseDAL","Application/Lib");
->>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 class NewsDAL extends BaseDAL
 {
 

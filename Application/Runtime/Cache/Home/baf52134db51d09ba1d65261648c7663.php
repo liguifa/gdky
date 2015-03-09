@@ -76,11 +76,11 @@
 			<label>标题:</label><input name="title" id="title" type="text" placeholder="请输入文章标题！" /><br />
 			<label>模块:</label>
 			<ul class="forums">
-				<li data-id="1">开源资讯</li>
-				<li data-id="2">开源技术</li>
-				<li data-id="3">开源项目</li>
-				<li data-id="4">开源分享</li>
-				<li data-id="5">开源问答</li>
+				<li data-id="0">开源资讯</li>
+				<li data-id="1">开源技术</li>
+				<li data-id="2">开源项目</li>
+				<li data-id="3">开源分享</li>
+				<li data-id="4">开源问答</li>
 				<li data-id="6">学习资源</li>
 			</ul>
 			<input type="hidden" name="forum" id="forums_input" /><br />

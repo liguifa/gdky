@@ -30,11 +30,7 @@ class TechnologyBLL
 	****************************/
 	public function Select($pageIndex,$pageSize,$type)
 	{
-<<<<<<< HEAD
 		return self::$technologyDAL->Select("users","user_Id","technology_UserId",$pageIndex-1,$pageSize,"technology_IsDel=false and technology_OwnForumId=1 and (technology_Type=$type or $type=0)","technology_PublicTime","desc");     //调用数据层操作对象对数据库进行查询
-=======
-		return self::$technologyDAL->Select("users","user_Id","technology_UserId",$pageIndex-1,$pageSize,"technology_IsDel=false and technology_Type=$type","technology_PublicTime","desc");     //调用数据层操作对象对数据库进行查询
->>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 	}
 
 	/***************************
@@ -42,9 +38,9 @@ class TechnologyBLL
 	参数：无
 	返回：数据库查询结果（二维数组）
 	****************************/
-	public function Count()
+	public function Count($type)
 	{
-		return self::$technologyDAL->Count();      //调用数据层操作对象对数据库数据个数计算
+		return self::$technologyDAL->Count_Reply("technology_IsDel=false and technology_OwnForumId=1 and (technology_Type=$type or $type=0)");      //调用数据层操作对象对数据库数据个数计算
 	}
 }
 ?>

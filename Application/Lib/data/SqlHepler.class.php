@@ -1,18 +1,10 @@
-<<<<<<< HEAD
-﻿<?php
-=======
 <?php
->>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 /*********************************
 时间：2014-10-29
 作者：李贵发
 功能：mysql数据库的增删改查
 **********************************/
-<<<<<<< HEAD
 require_once 'config.php';
-=======
-require_once '/Application/Common/Conf/config.php';
->>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 class SqlHelper
 {
 	private static $hostname;             //数据库地址

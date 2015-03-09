@@ -52,7 +52,6 @@
 							<!-- 多说评论框 start -->
 							<div class="ds-thread" data-thread-key="2014110608303340" data-title="机密文件显示小米去年营收270亿元 增长一倍多" data-url="http://localhost:5555/index.php/Home/Index/newContent/html/2014110608303340.html"></div>
 							<!-- 多说评论框 end -->
-							
 					</div>
 				</div>
 				<div id="content_content_right">

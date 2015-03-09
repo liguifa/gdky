@@ -153,7 +153,7 @@ class FileOperation
 	****************************/
 	private static function Exception($e)
 	{
-		FileOperation::Write(config::$Login,$e->getMessage().'=||='.date(‘y-m-d h:i:s’,time()).'\n');
+		//FileOperation::Write(config::$Login,$e->getMessage().'=||='.date(‘y-m-d h:i:s’,time()).'\n');
 	}
 }
 ?>

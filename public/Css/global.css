@@ -15,11 +15,7 @@ body{
 #header_top{
 	width: 100%;
 	height: 30px;
-<<<<<<< HEAD
 	border-bottom:1px solid #dddddd; 
-=======
-	border-bottom:1px solid rgb(221, 221, 221); 
->>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 }
 #header_top_main{
 	width: 1024px;
@@ -68,11 +64,7 @@ body{
 	height: 80px;
 	margin: auto;
 }
-<<<<<<< HEAD
 #header_content img{
-=======
-#header_content>img{
->>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 	width: 400px;
 	height: 100%;
 }
@@ -114,11 +106,7 @@ body{
 	float:right;
 	margin-top: -1px!important;
 	margin-top: -16px\0;
-<<<<<<< HEAD
 	margin-top: -30px\9;
-
-=======
->>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 }
 #header_bottom_main_search_input{
 	width: 192px;
@@ -148,12 +136,9 @@ body{
 	/*background: -webkit-linear-gradient(top, #ffffff, #f7f7f7);*/
 	background: url(../Images/barbg.png) repeat-x;
 }
-<<<<<<< HEAD
 .clear{
 	clear: both;
 }
-=======
->>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 #content{
 	width: 1024px;
 	height: auto;
@@ -189,11 +174,8 @@ div.quotes span.thisclass {
 }
 div.quotes span.disabled {
 	border-right: #f3f3f3 1px solid; padding-right: 5px; border-top: #f3f3f3 1px solid; padding-left: 5px; padding-bottom: 2px; border-left: #f3f3f3 1px solid; color: #ccc; margin-right: 2px; padding-top: 2px; border-bottom: #f3f3f3 1px solid
-<<<<<<< HEAD
 }
 #content_content_right_public div button a{
 	text-decoration: none;
 	color:#000;
-=======
->>>>>>> d7752944db3380b28c1bd0b0f5bd9d9a25a956de
 }
