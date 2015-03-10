@@ -235,7 +235,7 @@ class SqlHelper
 	{
 		self::$dbInstance->query("SET NAMES utf8");	//设置编码为utf8防止中文乱码
 		$result=self::$dbInstance->query(self::$sql);
-        if($returnArray)
+		if($returnArray)
         {
             $res=array();
 		    for($i=0;$result&&$r=$result->fetch_assoc();$i++)	   //遍历查询结果生成二位数组

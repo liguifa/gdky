@@ -69,7 +69,7 @@ class IndexController extends Controller
         $pageIndex=I("pageIndex");
         $n=new \NewsBLL();
         $news=$n->Select($pageIndex,20);
-        $hotNews=$n->Select_Order("new_ScanNumber");
+        $hotNews=$n->Select_Order("new_PublicTime");
         $this->assign('newsSize',ceil(intval($n->Count()[0]["count(*)"])/20));
         $users=new \UserBLL();
         $this->assign("users",$users->GetHotUser('news',"new_UserId",10));	
@@ -229,13 +229,13 @@ class IndexController extends Controller
     public function PublishIn()
     {
         $public=new \PublicBLL();
-        if($public->Publish($_POST))
+        if($public->Publish($_POST,$_FILES))
         {
-            // $this->Success();
+            $this->Success("发布成功！正在为你跳转...");
         }
         else
         {
-            // $this->Fileure();
+            $this->error("发布失败！请先登录系统...");
         }
     }
 

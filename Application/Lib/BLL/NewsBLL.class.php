@@ -46,7 +46,8 @@ class NewsBLL
 
 	public function Add($title,$brief,$image,$userId,$url)
 	{
-		self::$newsDAL->Add("null,'$title','$brief','$url','$image',0,'"+date("Y-m-d")+"',$userId,1,0,1");
+		echo $userId;
+		self::$newsDAL->Add("null,'$title','$brief','$url','$image',0,'".date("Y-m-d h:G:s")."',$userId,1,0,1");
 	}
 
 	/***************************

@@ -31,9 +31,9 @@
 					<volist id="new" name="news" > 
 						<li>
 							<div>
-								<h4><a href="{:U('Home/Index/newContent/html/'.$new['new_Body'])}">{$new.new_Title}</a></h4>
+								<h4><a href="{:U('Home/Index/newContent/html/'.$new['new_Body'])}" target="_blank">{$new.new_Title}</a></h4>
 								<div>
-									<a href="{:U('Home/Index/newContent/html/'.$new['new_Body'])}"><img src="{$new.new_Image}" /></a>
+									<a href="{:U('Home/Index/newContent/html/'.$new['new_Body'])}" target="_blank"><img src="__PUBLIC__/updatafile/images/{$new.new_Image}" /></a>
 									<p>{$new.new_Brief}</p>
 									<div>
 										<ul>

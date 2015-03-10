@@ -2,31 +2,31 @@
 class PublicBLL
 {
 	private $addExperience=2;
-	public function Publish($dataArr)
+	public function Publish($dataArr,$files)
 	{
-		if(!isset($_SESSION['user']))
+		if(isset($_SESSION['user'])  && $dataArr("yzm")==$_SESSION["ver"])
 		{
 			switch ($dataArr["forum"]) {
 				case '0':
-					return $this->News();
+					return $this->News($dataArr,$files);
 					break;
 				case '1':
-					return $this->Projection();
+					return $this->Projection($dataArr);
 					break;
 				case '2':
-					return $this->Technology();
+					return $this->Technology($dataArr);
 					break;
 				case '3':
-					return $this->Share();
+					return $this->Share($dataArr);
 					break;
 				case '4':
-					return $this->Question();
+					return $this->Question($dataArr);
 					break;
 				case '5':
-					return $this->Teahouse();
+					return $this->Teahouse($dataArr);
 					break;
 				case '6':
-					return $this->Study();
+					return $this->Study($dataArr);
 					break;
 			}
 		}
@@ -36,17 +36,19 @@ class PublicBLL
 		}
 	}
 
-	public function News($dataArr)    //0
+	public function News($dataArr,$files)    //0
 	{
-		$filename="../../PublicViews/newContent.html";
-		$newFileName="/public/updatafile/newsHtml/".date("YmdhGs").rand(1000,9999).".html";
-		echo $newFileName;
+		$newHtmlId=date("YmdhGs").rand(1000,9999);
+		$filename="Application/PublicViews/newContent.html";
+		$newFileName="public/updatafile/newsHtml/".$newHtmlId.".html";
 		$subArr=array();
-		$subArr[0]=array('sub' =>"{$title}" , "str" => $dataArr['title'] );
-		$subArr[1]=array('sub' =>"{$body}" , "str" => $dataArr['body'] );
-		FileOperation::ReplaceAndSave($fileName,$subArr,$newFileName);
+		$subArr[0]=array('sub' =>"{title}" , "str" => $dataArr['title'] );
+		$subArr[1]=array('sub' =>"{body}" , "str" => $dataArr['body'] );
+		FileOperation::ReplaceAndSave($filename,$subArr,$newFileName);
+		$image=new UpdataFile();
+		$image->UpdataImage($files["image"],"public/updatafile/images/".$newHtmlId.".jpg");
 		$new=new NewsBLL();
-		$new->Add($dataArr["title"],$dataArr["title"],$dataArr["brief"],$dataArr["image"],$_SESSION['user'],$dataArr["title"]);
+		$new->Add($dataArr["title"],$dataArr["briefly"],$newHtmlId,$_SESSION['user'],$newHtmlId.".jpg");
 		$user=new UserBLL();
 		$user->UpdateExperience($_SESSION['user'],$this->addExperience);
 		return true;

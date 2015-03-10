@@ -30,9 +30,9 @@
 					<ul >
 					<?php if(is_array($news)): $i = 0; $__LIST__ = $news;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$new): $mod = ($i % 2 );++$i;?><li>
 							<div>
-								<h4><a href="<?php echo U('Home/Index/newContent/html/'.$new['new_Body']);?>"><?php echo ($new["new_Title"]); ?></a></h4>
+								<h4><a href="<?php echo U('Home/Index/newContent/html/'.$new['new_Body']);?>" target="_blank"><?php echo ($new["new_Title"]); ?></a></h4>
 								<div>
-									<a href="<?php echo U('Home/Index/newContent/html/'.$new['new_Body']);?>"><img src="<?php echo ($new["new_Image"]); ?>" /></a>
+									<a href="<?php echo U('Home/Index/newContent/html/'.$new['new_Body']);?>" target="_blank"><img src="/Public/updatafile/images/<?php echo ($new["new_Image"]); ?>" /></a>
 									<p><?php echo ($new["new_Brief"]); ?></p>
 									<div>
 										<ul>

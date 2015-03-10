@@ -47,6 +47,11 @@
 					alert("摘要不能为空!");
 					res=false;
 				}
+				else if($("#briefly").val().length<200 || $("#briefly").val().length>400)
+				{
+					alert("摘要需要在200-400字之间!");
+					res=false;
+				}
 				else if($("#body").val()=="")
 				{
 					alert("文章内容不能为空!");
@@ -72,7 +77,7 @@
 			getData("header");
 		</script>
 		<div id="content">
-		<form action="<?php echo U('/Home/Index/PublishIn');?>" method="post">
+		<form action="<?php echo U('/Home/Index/PublishIn');?>" method="post" enctype="multipart/form-data">
 			<label>标题:</label><input name="title" id="title" type="text" placeholder="请输入文章标题！" /><br />
 			<label>模块:</label>
 			<ul class="forums">
@@ -81,13 +86,16 @@
 				<li data-id="2">开源项目</li>
 				<li data-id="3">开源分享</li>
 				<li data-id="4">开源问答</li>
+				<li data-id="5">开源茶舍</li>
 				<li data-id="6">学习资源</li>
 			</ul>
 			<input type="hidden" name="forum" id="forums_input" /><br />
 			<label>类别:</label>
 			<ul class="type">
 			<?php if(is_array($forums)): $i = 0; $__LIST__ = $forums;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$forum): $mod = ($i % 2 );++$i;?><li data-id="<?php echo ($forum["forum_Id"]); ?>"><?php echo ($forum["forum_Name"]); ?></li><?php endforeach; endif; else: echo "" ;endif; ?>
-			</ul>
+			</ul><br />
+			<label>图片:</label>
+			<input type="file" name="image" />
 			<input type="hidden" name="type" id="type_input" /><br />
 			<label>摘要:</label><input name="briefly" id="briefly" type="text" placeholder="请输入文章摘要！" /><br />
 			<h2>内容:</h2><textarea name="body" id="editor_id"></textarea><input type="hidden" name="body" id="body" />

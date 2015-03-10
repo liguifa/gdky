@@ -21,9 +21,10 @@ class UpdataFile
 
 	public function UpdataImage($file,$newFileName)
 	{
+
 		if($this->VerificationImage($file))
 		{
-			$newFileName=$newFileName.date('Yhis').".png";
+			//$newFileName=$newFileName.date('Yhis').".png";
 			return $this->ConvertSaveStatus(move_uploaded_file($file["tmp_name"], $newFileName),$newFileName);
 		}
 		else
