@@ -32,6 +32,11 @@ class TeahouseBLL
 		return self::$TeahouseDAL->Select("users","user_Id","post_UserId",$pageIndex-1,$pageSize,"post_IsDel=false and post_OwnForumId=5 and post_OwnPostId=0","post_PublicTime","desc");     //调用数据层操作对象对数据库进行查询
 	}
 
+	public function Add($title,$brief,$url,$userId,$type,$image)
+	{
+		self::$ShareDAL->Add("null,'$brief','$title',$userId,'$url','".date("Y-m-d h:G:s")."',3,0,0,0,0,$image");
+	}
+
 	/***************************
 	功能：获取数据库数据量
 	参数：无

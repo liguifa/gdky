@@ -32,6 +32,11 @@ class ProjectBLL
 		return self::$ProjectDAL->Select("users","user_Id","technology_UserId",$pageIndex-1,$pageSize,"technology_IsDel=false and technology_OwnForumId=2 and (technology_Type=$type or $type=0)","technology_PublicTime","desc");     //调用数据层操作对象对数据库进行查询
 	}
 
+	public function Add($title,$brief,$url,$userId,$type)
+	{
+		self::$ProjectDAL->Add("null,'$brief','$title',$userId,'$url','".date("Y-m-d h:G:s")."',1,0,$type,0,0,null");
+	}
+
 	/***************************
 	功能：获取数据库数据量
 	参数：无

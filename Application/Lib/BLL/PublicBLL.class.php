@@ -4,20 +4,20 @@ class PublicBLL
 	private $addExperience=2;
 	public function Publish($dataArr,$files)
 	{
-		if(isset($_SESSION['user'])  && $dataArr("yzm")==$_SESSION["ver"])
+		if(isset($_SESSION['user']))
 		{
 			switch ($dataArr["forum"]) {
 				case '0':
 					return $this->News($dataArr,$files);
 					break;
-				case '1':
+				case '2':
 					return $this->Projection($dataArr);
 					break;
-				case '2':
+				case '1':
 					return $this->Technology($dataArr);
 					break;
 				case '3':
-					return $this->Share($dataArr);
+					return $this->Share($dataArr,$files);
 					break;
 				case '4':
 					return $this->Question($dataArr);
@@ -48,25 +48,61 @@ class PublicBLL
 		$image=new UpdataFile();
 		$image->UpdataImage($files["image"],"public/updatafile/images/".$newHtmlId.".jpg");
 		$new=new NewsBLL();
-		$new->Add($dataArr["title"],$dataArr["briefly"],$newHtmlId,$_SESSION['user'],$newHtmlId.".jpg");
+		$new->Add($dataArr["title"],$dataArr["briefly"],$newHtmlId.".jpg",$_SESSION['user'],$newHtmlId);
 		$user=new UserBLL();
 		$user->UpdateExperience($_SESSION['user'],$this->addExperience);
 		return true;
 	}
 
-	public function Projection()   //1
+	public function Projection($dataArr)   //2
 	{
+		$newHtmlId=date("YmdhGs").rand(1000,9999);
+		$filename="Application/PublicViews/newContent.html";
+		$newFileName="public/updatafile/newsHtml/".$newHtmlId.".html";
+		$subArr=array();
+		$subArr[0]=array('sub' =>"{title}" , "str" => $dataArr['title'] );
+		$subArr[1]=array('sub' =>"{body}" , "str" => $dataArr['body'] );
+		FileOperation::ReplaceAndSave($filename,$subArr,$newFileName);
+		$project=new ProjectBLL();
+		$project->Add($dataArr["title"],$dataArr["briefly"],$newHtmlId,$_SESSION['user'],$dataArr["type"]);
+		$user=new UserBLL();
+		$user->UpdateExperience($_SESSION['user'],$this->addExperience);
+		return true;
+	}
+
+	public function Technology($dataArr)    //1
+	{
+		$newHtmlId=date("YmdhGs").rand(1000,9999);
+		$filename="Application/PublicViews/newContent.html";
+		$newFileName="public/updatafile/newsHtml/".$newHtmlId.".html";
+		$subArr=array();
+		$subArr[0]=array('sub' =>"{title}" , "str" => $dataArr['title'] );
+		$subArr[1]=array('sub' =>"{body}" , "str" => $dataArr['body'] );
+		FileOperation::ReplaceAndSave($filename,$subArr,$newFileName);
+		$tech=new TechnologyBLL();
+		$tech->Add($dataArr["title"],$dataArr["briefly"],$newHtmlId,$_SESSION['user'],$dataArr["type"]);
+		$user=new UserBLL();
+		$user->UpdateExperience($_SESSION['user'],$this->addExperience);
+		return true;
 
 	}
 
-	public function Technology()    //2
+	public function Share($dataArr,$files)     //3
 	{
-
-	}
-
-	public function Share()     //3
-	{
-
+		$newHtmlId=date("YmdhGs").rand(1000,9999);
+		$filename="Application/PublicViews/newContent.html";
+		$newFileName="public/updatafile/newsHtml/".$newHtmlId.".html";
+		$subArr=array();
+		$subArr[0]=array('sub' =>"{title}" , "str" => $dataArr['title'] );
+		$subArr[1]=array('sub' =>"{body}" , "str" => $dataArr['body'] );
+		FileOperation::ReplaceAndSave($filename,$subArr,$newFileName);
+		$image=new UpdataFile();
+		$image->UpdataImage($files["image"],"public/updatafile/images/".$newHtmlId.".jpg");
+		$tech=new ShareBLL();
+		$tech->Add($dataArr["title"],$dataArr["briefly"],$newHtmlId,$_SESSION['user'],$dataArr["type"],$newHtmlId.".jpg");
+		$user=new UserBLL();
+		$user->UpdateExperience($_SESSION['user'],$this->addExperience);
+		return true;
 	}
 
 	public function Question()     //4

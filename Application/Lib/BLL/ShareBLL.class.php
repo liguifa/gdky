@@ -32,6 +32,12 @@ class ShareBLL
 		return self::$ShareDAL->Select("users","user_Id","technology_UserId",$pageIndex-1,$pageSize,"technology_IsDel=false and technology_OwnForumId=3","technology_PublicTime","desc");     //调用数据层操作对象对数据库进行查询
 	}
 
+	public function Add($title,$brief,$url,$userId,$type,$image)
+	{
+		self::$ShareDAL->Add("null,'$brief','$title',$userId,'$url','".date("Y-m-d h:G:s")."',3,0,0,0,0,$image");
+	}
+
+
 	/***************************
 	功能：获取数据库数据量
 	参数：无

@@ -75,9 +75,9 @@
 								</div>
 								<ul>
 									<li><a href="#"><?php echo ($project["user_Username"]); ?></a> 发布于 <?php echo ($project["technology_PublicTime"]); ?></li>
-									<li><a href="#">赞<?php echo ($tech["technology_PraiseNumber"]); ?></a></li>
+									<!-- <li><a href="#">赞<?php echo ($tech["technology_PraiseNumber"]); ?></a></li>
 									<li><a href="#">踩<?php echo ($tech["technology_StampNumber"]); ?></a></li>
-									<li><a href="#">分享</a></li>
+									<li><a href="#">分享</a></li> -->
 									</ul>
 								<div class="clear"></div>
 							</li><?php endforeach; endif; else: echo "" ;endif; ?>
