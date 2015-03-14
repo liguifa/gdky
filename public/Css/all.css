@@ -103,3 +103,60 @@ h3>a:hover{
 	background:#f5f5f5;
 	border-bottom: solid red 2px;
 }
+#navinfo{
+	height: 40px;
+	width: 100%;
+	background: #fff;
+}
+#navinfo ul{
+	padding: 0px;
+	width: 230px;
+	margin: auto;
+	list-style: none;
+
+}
+#navinfo ul li{
+	float:left;
+	padding: 10px;
+	cursor: pointer;
+}
+#navinfo ul li:hover{
+	color:red;
+}
+#info_body{
+	background: #fff;
+	width: 100%;
+	height: 200px;
+	margin-top: 10px;
+}
+#info_body table{
+	width: 100%;
+	height: 100%;
+}
+#info_body table tr{
+	margin: 10px;
+}
+#info_body table tr td.info_name{
+	width: 75px;
+}
+#submit{
+	float: left;
+  /* padding: 3px 8px; */
+  background: #6B86B3;
+  border: 1px solid #333333;
+  text-transform: uppercase;
+  margin-right: 15px;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  width: 70px;
+  text-align: center;
+  cursor: pointer;
+  /* cursor: hand; */
+  height: 26px;
+  line-height: 22px;
+}
+#submit:hover{
+	background: #fff;
+	color:#000;
+}

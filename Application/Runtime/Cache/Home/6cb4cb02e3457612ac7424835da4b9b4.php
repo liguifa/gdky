@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit();?>{"status":true,"message":"<span role-mark='start'><a href='/index.php/Home/Blog/index/page/info.html'>李贵发</a></span>|<span><a href='/index.php/Home/User/Login'>退出</a></span role-mark='end'>","append":"2"}

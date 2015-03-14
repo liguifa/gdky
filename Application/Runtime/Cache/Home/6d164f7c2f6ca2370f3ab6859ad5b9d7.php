@@ -35,16 +35,16 @@
 			<div class="progress" id="progress"></div>
 			<div class="metabar" >
 			
-					<img id="me" class="logo" src="/Public/updatafile/userImages/me.JPG">
+					<img id="me" class="logo" src="/Public/updatafile/userImages/none.gif">
 					<h1 class="logo-h1">Welcome！</h1>
 			
-					<a id="forkme_banner" href="https://github.com/liuhao2050">View on GitHub</a>
-					<audio id="music" src="/Public/Musics/index.mp3" controls="controls" <!----autoplay="autoplay"---->></audio>
+					<a id="forkme_banner" href="https://github.com/DalianUniversityofTechnologyOSC">View on GitHub</a>
+					<audio id="music" src="/Public/Musics/index.mp3" controls="controls" ></audio>
 			</div>
 			<nav class="navTables">
 				<ul class="navTables-ul" >
-					<li id="li0" class="active">全部</li>
-					<li id="li1">博客</li>
+					<li id="li0" class="active">主页</li>
+					<li id="li1">新博客</li>
 					<li id="li2">信息</li>
 					<li id="li3">照片</li>
 					<li id="li4">视频</li>
@@ -54,7 +54,7 @@
 				
 			</nav>
 			<div class="frame">
-				<iframe id="iframe" src="<?php echo U('/Home/Blog/all');?>"></iframe>
+				<iframe id="iframe" src="<?php echo U('/Home/Blog/'.$page);?>"></iframe>
 			</div>
 
 		</div>

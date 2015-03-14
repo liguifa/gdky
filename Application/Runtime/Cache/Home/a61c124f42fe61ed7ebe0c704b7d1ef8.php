@@ -25,7 +25,7 @@
 				<li><a href="<?php echo U('/Home/Index/shares/pageIndex/1');?>">开源分享</a></li>
 				<li><a href="<?php echo U('/Home/Index/questions/pageIndex/1');?>">开源问答</a></li>
 				<li><a href="<?php echo U('/Home/Index/teahouse/pageIndex/1');?>">开源茶馆</a></li>
-				<li><a href="<?php echo U('/Home/Index/blog/page/Index');?>">开源博客</a></li>
+				<li><a href="<?php echo U('/Home/Blog/index');?>">开源博客</a></li>
 				<li id="header_bottom_main_ul_li_last"><a href="<?php echo U('/Home/Index/study');?>">学习资源</a></li>
 			</ul>
 			<div id="header_bottom_main_search"><input  id="header_bottom_main_search_input" type="search" /><button id="header_bottom_main_search_button">搜索</button></div>

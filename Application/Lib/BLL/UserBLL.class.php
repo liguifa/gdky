@@ -16,13 +16,13 @@ class UserBLL
 			$username=$_Cookie["user_id"];
 			$password=$_Cookie["user_pwd"];
 		}
-		$result=self::$userDAL->Select(0,1,"user_Email='$username'");
+		$result=self::$userDAL->Select(1,1,"user_Email='$username'");
 		if(sizeof($result))
 		{
 			if($result[0]["user_Password"]==md5($username+$password))
 			{
 				$status->status=true;
-				$status->message="<span role-mark='start'><a href='/index.php/Home/User/Login'>".$result[0]["user_Username"]."</a></span>|<span><a href='/index.php/Home/User/Login'>退出</a></span role-mark='end'>";
+				$status->message="<span role-mark='start'><a href='/index.php/Home/Blog/index/page/info.html'>".$result[0]["user_Username"]."</a></span>|<span><a href='/index.php/Home/User/Login'>退出</a></span role-mark='end'>";
 				$status->append=$result[0]["user_Id"];
 				$_SESSION['user']=$result[0]["user_Id"];
 			}
@@ -46,7 +46,7 @@ class UserBLL
 	{
 		if($_SESSION['user'])
 		{
-			return "<span role-mark='start\'><a href='/index.php/Home/User/Login'>".$result[0]["user_Username"]."</a></span>|<span><a href='/index.php/Home/User/Login'>退出</a></span role-mark='end'>";
+			return "<span role-mark='start\'><a href='/index.php/Home/Blog/index/page/info.html'>".$result[0]["user_Username"]."</a></span>|<span><a href='/index.php/Home/User/Login'>退出</a></span role-mark='end'>";
 		}
 		else
 		{

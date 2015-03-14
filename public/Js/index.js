@@ -62,7 +62,7 @@ function addActive(){
 	$("#li1").click(function(){
 		rmActive();
 		$('#li1').addClass("active");
-		$('iframe').attr("src","blog.html");
+		$('iframe').attr("src","addBlog.html");
 	});
 	$("#li2").click(function(){
 		rmActive();

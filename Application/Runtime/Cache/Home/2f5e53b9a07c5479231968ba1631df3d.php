@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" href="/Public/BlogThemeThemelates/2015010511111111/style/all.css" >
+	<link rel="stylesheet" href="/Public/Css/all.css" >
 	<meta charset="utf-8">
 	<script type="text/javascript">
 	

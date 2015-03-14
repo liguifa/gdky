@@ -68,6 +68,55 @@
 				var num=Math.random()*100;
 				$(this).attr("src","../User/VerCode/"+num)
 			});
+
+			$(".forums>li[data-id=0]").click(function(){
+				$(".type").hide();
+				$(".append").hide();
+				$(".img").show();
+				$(".briefly").show();
+			});
+
+			$(".forums>li[data-id=1]").click(function(){
+				$(".type").show();
+				$(".append").hide();
+				$(".img").hide();
+				$(".briefly").show();
+			});
+
+			$(".forums>li[data-id=2]").click(function(){
+				$(".type").show();
+				$(".append").hide();
+				$(".img").hide();
+				$(".briefly").show();
+			});
+
+			$(".forums>li[data-id=3]").click(function(){
+				$(".type").hide();
+				$(".append").hide();
+				$(".img").show();
+				$(".briefly").show();
+			});
+
+			$(".forums>li[data-id=4]").click(function(){
+				$(".type").hide();
+				$(".append").hide();
+				$(".img").hide();
+				$(".briefly").hide();
+			});
+
+			$(".forums>li[data-id=5]").click(function(){
+				$(".type").hide();
+				$(".append").hide();
+				$(".img").hide();
+				$(".briefly").hide();
+			});
+
+			$(".forums>li[data-id=6]").click(function(){
+				$(".type").hide();
+				$(".append").show();
+				$(".img").hide();
+				$(".briefly").hide();
+			});
 		});
 	</script>
 </head>
@@ -90,14 +139,15 @@
 				<li data-id="6">学习资源</li>
 			</ul>
 			<input type="hidden" name="forum" id="forums_input" /><br />
-			<label>类别:</label>
+			<label class="type">类别:</label>
 			<ul class="type">
 			<?php if(is_array($forums)): $i = 0; $__LIST__ = $forums;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$forum): $mod = ($i % 2 );++$i;?><li data-id="<?php echo ($forum["forum_Id"]); ?>"><?php echo ($forum["forum_Name"]); ?></li><?php endforeach; endif; else: echo "" ;endif; ?>
 			</ul><br />
-			<label>图片:</label>
-			<input type="file" name="image" />
+			<label class="img">图片:</label>
+			<input class="img" type="file" name="image" />
 			<input type="hidden" name="type" id="type_input" /><br />
-			<label>摘要:</label><input name="briefly" id="briefly" type="text" placeholder="请输入文章摘要！" /><br />
+			<label class="briefly">摘要:</label><input class="briefly" name="briefly" id="briefly" type="text" placeholder="请输入文章摘要！" /><br />
+			<label class="append">附件地址：</label><input class="append" name="append" id="append" type="text" placeholder="请输入文章摘要！" /><br />
 			<h2>内容:</h2><textarea name="body" id="editor_id"></textarea><input type="hidden" name="body" id="body" />
 			<label>验证码:</label><input name="yzm" id="yzm" type="text" placeholder="请输入四位验证码！" /><img id="yzm_img" src="<?php echo U('/Home/User/VerCode');?>"/><br />
 			<button type="submit">发表文章</button><label>必须登录后才能发表，如要登录请点击 这里 <a href="#">登录</a>。</label>

@@ -40,7 +40,7 @@ class BaseDAL
 	****************************/
 	private function Select_Where($pageNumber,$sizeNumber,$where)
 	{
-		return self::$sh->Select("*")->From(self::$table)->Where($where)->Limit($pageNumber*$sizeNumber,$sizeNumber)->Exec();    //调用数据库操作对象对数据库进行查询
+		return self::$sh->Select("*")->From(self::$table)->Where($where)->Limit(($pageNumber-1)*$sizeNumber,$sizeNumber)->Exec();    //调用数据库操作对象对数据库进行查询
 	}
 
 	/***************************
