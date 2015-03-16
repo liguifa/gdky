@@ -12,10 +12,10 @@
 <body>
 	<div class="global">
 		<div class="main-con">
-			<div class="wrapper top-main clearfix" style="margin-top:36px;">
-	<div class="main tab mt15">
+			<!-- <div class="wrapper top-main clearfix" style="margin-top:36px;">
+	<div class="main tab mt15">-->
 		<!--切换图片-->
-		<div class="slide">
+		<!--<div class="slide">
 			<ul id="bigSlideUl" class="slide-ul clearfix">
 				<li>
 				<a  class="picimglink" href="#">
@@ -114,9 +114,9 @@
 				<img width="230" height="350" srch="/Public/images/1363867851540.jpg" alt="阳光下的美景手机壁纸下载" />
 				<span class="pic-txt">懒人图库搜集整理</span> </a></li>
 			</ul>
-		</div>
+		</div>-->
 		<!--slide 切换按钮-->
-		<ul id="smallSlideUl" class="info-btn clearfix">
+		<!--<ul id="smallSlideUl" class="info-btn clearfix">
 			<li class="info-cur" id="mypic0" sid="0"><span>1</span></li>
 			<li id="mypic1" sid="1"><span>2</span></li>
 			<li id="mypic2" sid="2"><span>3</span></li>
@@ -130,9 +130,12 @@
 
 </div>
 <script type="text/javascript" src="/Public/js/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="/Public/js/zzsc.js"></script>
+<script type="text/javascript" src="/Public/js/zzsc.js"></script>-->
 		</div>
 	</div>
 
 </body>
-</html>
+</html> 
+<script type="text/javascript">
+	alert("暂未开放！");
+</script>

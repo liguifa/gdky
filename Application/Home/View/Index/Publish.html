@@ -37,17 +37,17 @@
 					alert("模块为必选项!");
 					res=false;
 				}
-				else if($("#type_input").val()=="")
+				else if($("#type_input").val()=="" && ($("#forums_input").val()=="1" || $("#forums_input").val()=="2"))
 				{
 					alert("类别为必选项!");
 					res=false;
 				}
-				else if($("#briefly").val()=="")
+				else if($("#briefly").val()=="" && $("#forums_input").val()!="4" && $("#forums_input").val()!="5" && $("#forums_input").val()!="6")
 				{
 					alert("摘要不能为空!");
 					res=false;
 				}
-				else if($("#briefly").val().length<200 || $("#briefly").val().length>400)
+				else if(($("#briefly").val().length<200 || $("#briefly").val().length>400) && $("#forums_input").val()!="4" && $("#forums_input").val()!="5" && $("#forums_input").val()!="6")
 				{
 					alert("摘要需要在200-400字之间!");
 					res=false;
@@ -152,7 +152,7 @@
 			<label class="append">附件地址：</label><input class="append" name="append" id="append" type="text" placeholder="请输入文章摘要！" /><br />
 			<h2>内容:</h2><textarea name="body" id="editor_id"></textarea><input type="hidden" name="body" id="body" />
 			<label>验证码:</label><input name="yzm" id="yzm" type="text" placeholder="请输入四位验证码！" /><img id="yzm_img" src="{:U('/Home/User/VerCode')}"/><br />
-			<button type="submit">发表文章</button><label>必须登录后才能发表，如要登录请点击 这里 <a href="#">登录</a>。</label>
+			<button type="submit">发表文章</button><label>必须登录后才能发表，如要登录请点击 这里 <a href="{:U('/Home/User/Login')}" target="_blank">登录</a>。</label>
 		</form>
 		</div>
 		<script type="text/javascript">

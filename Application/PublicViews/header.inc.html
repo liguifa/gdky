@@ -2,8 +2,8 @@
 	<div id="header_top">
 		<div id="header_top_main">
 			<ul>
-				<li>首页</li>
-				<li>收藏本站</li>
+				<li id="indexPage">首页</li>
+				<li id="savePage">收藏本站</li>
 			</ul>
 			<div id="header_top_main_user">
 				{$loginStatus}
@@ -26,7 +26,7 @@
 				<li><a href="{:U('/Home/Index/questions/pageIndex/1')}">开源问答</a></li>
 				<li><a href="{:U('/Home/Index/teahouse/pageIndex/1')}">开源茶馆</a></li>
 				<li><a href="{:U('/Home/Blog/index')}">开源博客</a></li>
-				<li id="header_bottom_main_ul_li_last"><a href="{:U('/Home/Index/study')}">学习资源</a></li>
+				<li id="header_bottom_main_ul_li_last"><a href="{:U('/Home/Index/study/pageIndex/1')}">学习资源</a></li>
 			</ul>
 			<div id="header_bottom_main_search"><input  id="header_bottom_main_search_input" type="search" /><button id="header_bottom_main_search_button">搜索</button></div>
 		</div>

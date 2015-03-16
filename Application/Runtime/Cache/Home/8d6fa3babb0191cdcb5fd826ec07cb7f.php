@@ -14,15 +14,17 @@
 </head>
 <body>
 	<div class="global">
-		
+		<div class="main-con">
 			  <!-- <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="100%" height="500"
       			poster="images/the.jpg"
      			 data-setup="{}">
     <source src="http://v1.music.126.net/web/cloudmusic/MyE3MTUhMiU1MSAxJDAgMA==/mv/==/290244/de7599cf8c4c23d63a2174b2134dcde0.mp4" type='video/mp4' />
   </video> -->
   <embed src="http://player.youku.com/player.php/sid/XNDIzMTM1Mjg4/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+  </div>
 		</div>
-	
-
 </body>
-</html>
+</html> 
+<script type="text/javascript">
+	alert("暂未开放！");
+</script>

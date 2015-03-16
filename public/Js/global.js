@@ -85,3 +85,11 @@ function Share(url,summary,title,pics)
 	document.write(['<a version="1.0" class="qzOpenerDiv" 	href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?',s.join('&'),'" target="_blank">分享</a>'].join(''));
 
 }
+$(document).ready(function(){
+	$("#indexPage").click(function(){
+		location.href="/index.php/Home/Index/index.html";
+	});
+	$("#savePage").click(function(){
+		window.external.addFavorite('http://www.gdky.top','工大开源社区');
+	});
+});

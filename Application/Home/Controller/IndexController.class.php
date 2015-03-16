@@ -211,6 +211,22 @@ class IndexController extends Controller
     ***************************/
     public function study()
     {
+        $pageIndex=I("pageIndex");
+        $study=new \StudyBLL();
+        $studys=$study->Select($pageIndex,20);
+        $this->assign("studys",$studys);
+        $count=$study->Count();
+        $this->assign("size",ceil(intval($count[0]["count(*)"])/30));
+        $this->assign("pageIndex",$pageIndex);
+        $this->display();
+    }
+
+    public function showStudy()
+    {
+        $studyId=I("sId");
+        $study=new \StudyBLL();
+        $studys=$study->GetStudyMsg($studyId);
+        $this->assign("study",$studys);
         $this->display();
     }
 
@@ -277,5 +293,11 @@ class IndexController extends Controller
     {
         $this->assign("user","李贵发");
         $this->display("../../../public/BlogThemeThemelates/2014112718142233/index");
+    }
+
+    public function outLogin()
+    {
+        $_SESSION["user"]=null;
+        $this->index();
     }
 }

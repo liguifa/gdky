@@ -76,7 +76,7 @@
 				<tbody>
 					<?php if(is_array($posts)): $i = 0; $__LIST__ = $posts;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$post): $mod = ($i % 2 );++$i;?><tr>
 						<td class="user_info">
-							<a href="#"><?php echo ($post["user_Username"]); ?></a>
+							<a href="/index.php/Home/Blog/index/page/info.html"><?php echo ($post["user_Username"]); ?></a>
 							<div class="user_img">
 								<img src="/Public/updatafile/userImages/<?php echo ($post["user_HeadImage"]); ?>">
 							</div>

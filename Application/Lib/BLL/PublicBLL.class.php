@@ -105,19 +105,30 @@ class PublicBLL
 		return true;
 	}
 
-	public function Question()     //4
+	public function Question($dataArr)     //4
 	{
-
+		$question=new QuestionBLL();
+		$question->Add($dataArr["title"],$dataArr["body"],$_SESSION["user"]);
+		$user=new UserBLL();
+		$user->UpdateExperience($_SESSION['user'],$this->addExperience);
+		return true;
 	}
 
 	public function Teahouse()    //5
 	{
-
+		$question=new TechnologyBLL();
+		$question->Add($dataArr["title"],$dataArr["body"],$_SESSION["user"]);
+		$user=new UserBLL();
+		$user->UpdateExperience($_SESSION['user'],$this->addExperience);
+		return true;
 	}
 
 	public function Study()    //6
 	{
-
+		$study=new StudyBLL();
+		$study->Add($dataArr["title"],$dataArr["body"],$_SESSION["user"],$_SESSION["append"]);
+		$user=new UserBLL();
+		$user->UpdateExperience($_SESSION['user'],$this->addExperience);
 	}
 }
 ?>

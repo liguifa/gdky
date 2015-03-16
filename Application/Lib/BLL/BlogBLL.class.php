@@ -27,9 +27,25 @@ class BlogBLL
 		  $pageSize ： int类型数据，指定从数据库中读取数据数
 	返回：数据库查询结果集（二维数组）
 	****************************/
-	public function Select($pageIndex,$pageSize)
+	public function Select($pageIndex,$pageSize,$id)
 	{
-		return self::$BlogDAL->Select($pageIndex,$pageSize,"blog_IsDel=false");     //调用数据层操作对象对数据库进行查询
+		return self::$BlogDAL->Select($pageIndex,$pageSize,"blog_IsDel=false and blog_UserId=$id");     //调用数据层操作对象对数据库进行查询
+	}
+
+	public function Select_Save($pageIndex,$pageSize,$id)
+	{
+		$user=new UserBLL();
+		$users=$user->GetUserMsg($id)[0];
+		$saveIds=split(",",$users["user_SaveBlogIds"]);
+		$where="blog_IsDel=false and (";
+		foreach ($saveIds as $key => $value) 
+		{
+			$where.=" blog_Id=$value or";
+		}
+
+		$where=substr($where, 0,-2).")";
+		self::$BlogDAL=new BlogDAL();
+		return self::$BlogDAL->Select($pageIndex,$pageSize,$where);
 	}
 
 	public function Add($dataArr)

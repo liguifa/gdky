@@ -29,7 +29,7 @@ class ForumsBLL
 	****************************/
 	public function Select()
 	{
-		return self::$ForumsDAL->Select(0,1000000000,"Forum_IsDel=false");     //调用数据层操作对象对数据库进行查询
+		return self::$ForumsDAL->Select(1,1000000000,"Forum_IsDel=false");     //调用数据层操作对象对数据库进行查询
 	}
 
 	public function Select_Number($size)

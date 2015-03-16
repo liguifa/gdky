@@ -32,9 +32,9 @@ class TeahouseBLL
 		return self::$TeahouseDAL->Select("users","user_Id","post_UserId",$pageIndex-1,$pageSize,"post_IsDel=false and post_OwnForumId=5 and post_OwnPostId=0","post_PublicTime","desc");     //调用数据层操作对象对数据库进行查询
 	}
 
-	public function Add($title,$brief,$url,$userId,$type,$image)
+	public function Add($title,$body,$id)
 	{
-		self::$ShareDAL->Add("null,'$brief','$title',$userId,'$url','".date("Y-m-d h:G:s")."',3,0,0,0,0,$image");
+		self::$TeahouseDAL->Add("null,'$id','$title','$body','".date("Y-m-d h:G:s")."',5,0,0,0,null,0");
 	}
 
 	/***************************

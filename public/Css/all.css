@@ -6,14 +6,11 @@ body{
 	margin-top: 0;
 	padding: 0;
 /*	background-color: #E5E5E5;*/
-	
 }
 .main-con{
 	width: 56%;
 	margin: auto;
 /*	background-color: #fff;*/
-
-	
 }
 .block-contebt{
 		text-decoration: none;
@@ -21,8 +18,7 @@ body{
 .bloct-title{
 	background-color: transparent;
 	font-size: 22px;
-font-weight: 700;
-
+	font-weight: 700;
 }
 h3>a{
 	text-decoration: none;
@@ -35,7 +31,6 @@ h3>a:hover{
 	width: 100%;
 	height: 230px;
 	background-color: #404040;
-
 }
 .info-logo{
 	width: 30%;
@@ -46,7 +41,6 @@ h3>a:hover{
 	width: 70%;
 	height: 230px;
 	float: left;
-	
 }
 .logo{
 	width: 70px;
@@ -54,10 +48,8 @@ h3>a:hover{
    	position: absolute;
    	top:5%;
 	margin-left: 5%;
-	
 	-webkit-border-radius: 50%;
 	border-radius: 50%; */
-	
 	background-image: url(../images/me.JPG);
 }
 .info-re{
@@ -85,7 +77,6 @@ h3>a:hover{
 	height: 100px;
 	margin: -20px auto;
 	font-family: "PT Sans", sans-serif;
-	
 }
 .co>h4{
 	padding: 35px;
@@ -113,7 +104,6 @@ h3>a:hover{
 	width: 230px;
 	margin: auto;
 	list-style: none;
-
 }
 #navinfo ul li{
 	float:left;
@@ -155,8 +145,16 @@ h3>a:hover{
   /* cursor: hand; */
   height: 26px;
   line-height: 22px;
+  margin-top: 5px;
 }
 #submit:hover{
 	background: #fff;
 	color:#000;
+}
+.blog_text{
+	width: 100%;
+}
+#editor_id{
+	width: 100%;
+	height: 400px;
 }

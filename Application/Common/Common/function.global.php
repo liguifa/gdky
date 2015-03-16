@@ -42,6 +42,7 @@ if(!isset($_COOKIE['userdata'])&&$_SERVER['PHP_SELF']!="/index.php")
 {
     header("Location: /");
 }
+
 /*echo $_SESSION["admin"];die;*/
 /*if(!$_SESSION["admin"]&&(!($_SERVER['PHP_SELF']=='/html/index.php/Admin/Index/login'||$_SERVER['PHP_SELF']=='/html/index.php/Admin/Index/VerCode.html'||$_SERVER['PHP_SELF']=='/html/index.php/Admin/Index/loginIn.html')))
 {

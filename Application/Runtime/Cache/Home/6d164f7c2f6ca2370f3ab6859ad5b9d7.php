@@ -21,7 +21,7 @@
 					<li><i class=" icon-folder-open-alt icon-lager"></i>&nbsp;&nbsp;Collection</li>
 					<li><i class=" icon-search icon-lager"></i>&nbsp;&nbsp;Search</li>
 				</ul>
-				<a href="#" id="login" class="button button-block button-rounded button-primary button-large">Login</a>
+				<a href="<?php echo U('/Home/User/login');?>" id="login" class="button button-block button-rounded button-primary button-large">Login</a>
 				<div class="siteNav-footer">
 					
 					<a href="">facebook</a>
@@ -46,10 +46,10 @@
 					<li id="li0" class="active">主页</li>
 					<li id="li1">新博客</li>
 					<li id="li2">信息</li>
-					<li id="li3">照片</li>
-					<li id="li4">视频</li>
+					<!-- <li id="li3">照片</li>
+					<li id="li4">视频</li> -->
 					<li id="li5">收藏</li>
-					<li id="li6">关注</li>
+					<!-- <li id="li6">关注</li> -->
 				</ul>
 				
 			</nav>

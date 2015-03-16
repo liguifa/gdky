@@ -22,7 +22,7 @@ class UserBLL
 			if($result[0]["user_Password"]==md5($username+$password))
 			{
 				$status->status=true;
-				$status->message="<span role-mark='start'><a href='/index.php/Home/Blog/index/page/info.html'>".$result[0]["user_Username"]."</a></span>|<span><a href='/index.php/Home/User/Login'>退出</a></span role-mark='end'>";
+				$status->message="<span role-mark='start'><a href='/index.php/Home/Blog/index/page/info.html'>".$result[0]["user_Username"]."</a></span>|<span><a href='/index.php/Home/User/outLogin'>退出</a></span role-mark='end'>";
 				$status->append=$result[0]["user_Id"];
 				$_SESSION['user']=$result[0]["user_Id"];
 			}
@@ -46,7 +46,8 @@ class UserBLL
 	{
 		if($_SESSION['user'])
 		{
-			return "<span role-mark='start\'><a href='/index.php/Home/Blog/index/page/info.html'>".$result[0]["user_Username"]."</a></span>|<span><a href='/index.php/Home/User/Login'>退出</a></span role-mark='end'>";
+			$result=$this->GetUserMsg($_SESSION["user"]);
+			return "<span role-mark=\"start\"><a href=\"/index.php/Home/Blog/index/page/info.html\">".$result[0]["user_Username"]."</a></span>|<span><a href=\"/index.php/Home/User/outLogin\">退出</a></span role-mark=\"end\">";
 		}
 		else
 		{

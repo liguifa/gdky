@@ -32,6 +32,16 @@ class StudyBLL
 		return self::$studyDAL->Select("users","user_Id","study_UserId",$pageIndex-1,$pageSize,"study_IsDel=false","study_PublicTime","desc");     //调用数据层操作对象对数据库进行查询
 	}
 
+	public function GetStudyMsg($id)
+	{
+		return self::$studyDAL->Select("users","user_Id","study_UserId",0,1,"study_IsDel=false and study_Id=$id","study_PublicTime","desc")[0];     //调用数据层操作对象对数据库进行查询
+	}
+
+	public function Add($title,$body,$id,$append)
+	{
+		self::$studyDAL->Add("null,'$id','$title','$body','$id','".date("Y-m-d h:G:s")."',$append,0");
+	}
+
 	/***************************
 	功能：获取数据库数据量
 	参数：无
